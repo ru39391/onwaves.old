@@ -1,5 +1,6 @@
 import '../scss/main.scss';
 
+import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/modal';
 import './libs/jquery.countdown';
 import './page/countdown';
