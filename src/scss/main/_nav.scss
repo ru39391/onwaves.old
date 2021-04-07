@@ -1,0 +1,115 @@
+.nav {
+    @extend %flex-item;
+    transition: all .3s ease;
+
+    @include media-breakpoint-up(lg) {
+        flex-grow: 1;
+    }
+
+    @include media-breakpoint-down(md) {
+        @include size(320px,580px);
+        @include pos(0,auto,fixed);
+        right: 0;
+        padding: 102px 0 0;
+        z-index: 1020;
+        background: #fff;
+        flex-direction: column;
+        align-items: stretch;
+        transform: translateX(100%);
+        box-shadow: 1px 1px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    &.active {
+        @include media-breakpoint-down(md) {
+            transform: translateX(0);
+        }
+    }
+}
+
+.nav__close {
+    @extend %btn-default;
+    @include size(35px,35px);
+    color: $color__brand_optional;
+
+    @include media-breakpoint-up(lg) {
+        display: none;        
+    }
+
+    @include media-breakpoint-down(md) {
+        @include inline-block;
+        @include pos(22px,auto);
+        right: 15px;
+    }
+}
+
+.nav__left {
+    @extend %flex-item;
+    flex-grow: 1;
+
+    @include media-breakpoint-up(lg) {
+        justify-content: center;
+    }
+
+    @include media-breakpoint-down(md) {
+        padding: 0 64px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &.nav__left_end {
+        @include media-breakpoint-up(lg) {
+            justify-content: end;
+        }
+
+        .nav__link {
+            @include media-breakpoint-up(lg) {
+                margin: 0 28px 0 0;
+                color: $color__brand_default;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.nav__right {
+    @extend %flex-item;
+
+    @include media-breakpoint-down(md) {
+        padding: 64px 64px 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        background: url(../img/bg/nav-footer.svg) repeat-x scroll left bottom rgba(0, 0, 0, 0);
+    }
+}
+
+.nav__link {
+    text-transform: uppercase;
+    color: $color__brand_default;
+
+    @include media-breakpoint-up(lg) {
+        margin: 0 28px 0 0;
+        line-height: 16px;
+        font-weight: 500;
+    }
+
+    @include media-breakpoint-down(md) {
+        margin: 0 0 30px;
+        line-height: 18px;
+    }
+
+    &.nav__link_main {
+        line-height: 18px;
+        color: $color__text_default;
+
+        @include media-breakpoint-up(lg) {
+            margin: 0 80px 0 0;
+        }
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}

@@ -1,0 +1,85 @@
+extends base.pug
+
+block meta
+  - var title = 'Личные данные';
+
+block sidebar
+
+block wrapper
+    .wrapper.wrapper_column.wrapper_wide
+        .content.content_lg
+            header.content__header.content__header_bg
+                .content__title.content__title_lg #{title}
+
+            block content
+                .content__body
+                    - var row = [{appender: 'Добавить способ'},{appender: 'Добавить способ'},{appender: 'Добавить способ'},{appender: 'Добавить способ'},{appender: 'Добавить способ'}]
+                    form.form(action="#")                        
+                        .form__row.form__row_userpic
+                            .form__userpic
+                                img.img-fluid(src="../img/content/tooltip.jpg" alt="")
+                            input.form__file(id="file" type="file")
+                            label.btn.btn_regular.btn_inverse(for="file") Загрузить фото
+                        .form__row
+                            .form__col
+                                .form__item
+                                    input.form__field(type="text" value="")
+                                    .form__label.form__label_nobg Имя:
+                                .form__item
+                                    input.form__field(type="email" value="")
+                                    .form__label.form__label_nobg E-mail:
+                                .form__title.form__title_colored Удобные способы связи
+                                each row__item in row
+                                    .form__item.form__item_extender
+                                        .form__row
+                                            .form__col
+                                                select.form__select.form__select_single
+                                                    option Telegram
+                                                    option WhatsApp
+                                                    option VK
+                                                    option Instagram
+                                                    option Facebook
+                                            .form__col.form__col_aside
+                                                input.form__field.form__field_bbottom(type="text" value="" placeholder="Номер, ссылка")
+                                                button.form__close.form__close_remover(type="button")
+                                                    svg.icon-fluid
+                                                        use(xlink:href="#icon-close-sm")
+                                .form__item
+                                    button.btn.btn_regular.btn_inverse.form__btn.form__btn_appender(type="button") Добавить способ
+                            .form__col
+                                .form__item
+                                    input.form__field.form__field_date(type="text" value="")
+                                    .form__label.form__label_nobg Дата рождения:
+                                .form__item
+                                    input.form__field(type="text" value="")
+                                    .form__label.form__label_nobg Город:
+                                .form__item
+                                    .form__title.form__title_colored Интересы:
+                                    - var features = [{feature: 'Классический вокал'},{feature: 'Эстрадный вокал'},{feature: 'Джазовый вокал'},{feature: 'Рок вокал'},{feature: 'Фолк вокал'},{feature: 'Эстрадно-джазовый вокал'},{feature: 'Вокал для начинающих'},{feature: 'Песни в караоке'},{feature: 'Актёрское мастерство'},{feature: 'Поднятие самооценки'},{feature: 'Консультация актёров'},{feature: 'Уверенность в себе'},{feature: 'Личный бренд'},{feature: 'Имидж'},{feature: 'Продвижение'},{feature: 'Создание музыкального коллектива'},{feature: 'Игра на музыкальных инструментах'},{feature: 'Игра на фортепиано'},{feature: 'Игра на гитаре'},{feature: 'Игра на барабанах'},{feature: 'Профессиональный вокал'},{feature: 'Вокал для детей'},{feature: 'Запись песен'},{feature: 'Мастеринг'},{feature: 'Сведение музыки'},{feature: 'Аранжировка песен'},{feature: 'Написание песен'},{feature: 'Риторика'},{feature: 'Постановка голоса'},{feature: 'Дыхание'}]
+                                    select.form__select.form__select_multiple(name="name[]" multiple="multiple")
+                                        each features__item in features
+                                            option(value="") #{features__item.feature}
+                                .form__item.form__item_icon
+                                    input.form__field(type="password" value="")
+                                    .form__label.form__label_nobg Старый пароль:
+                                    button.form__toggler.form__toggler_pwd(type="button")
+                                        svg.icon-fluid
+                                            use(xlink:href="#icon-eye")
+                                .form__item.form__item_icon
+                                    input.form__field(type="password" value="")
+                                    .form__label.form__label_nobg Новый пароль:
+                                    button.form__toggler.form__toggler_pwd(type="button")
+                                        svg.icon-fluid
+                                            use(xlink:href="#icon-eye")
+                                .form__item.form__item_icon
+                                    input.form__field(type="password" value="")
+                                    .form__label.form__label_nobg Повторите пароль:
+                                    button.form__toggler.form__toggler_pwd(type="button")
+                                        svg.icon-fluid
+                                            use(xlink:href="#icon-eye")
+
+                        footer.form__footer.form__footer_right
+                            //-input.btn.btn_regular.btn_inverse(type="reset" value="Отмена")
+                            input.btn.btn_regular(type="submit" value="Сохранить")
+
+        include includes/base/footer.pug

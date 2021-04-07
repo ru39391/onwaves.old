@@ -1,0 +1,483 @@
+extends main.pug
+
+block meta
+  - var title = 'Главная';
+
+block page
+  .intro
+    .container
+      .intro__wrapper
+        .intro__title Узнай, на что способен твой голос!
+        .intro__subtitle
+          | онлайн Школа «По Волнам» - 
+          br
+          | территория свободного творчества
+        footer.intro__footer
+          a.btn.btn_xl.btn_colored(hre="#" data-toggle="modal" data-target="#free") Получи урок бесплатно
+
+  .section.section_container.section_flex
+    .section__col.section__col_lg
+      .video.video_mb.embed-responsive.embed-responsive-16by9
+        iframe.embed-responsive-item(src="https://player.vimeo.com/video/464104635?app_id=122963" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" title="1 1 вступление" data-ready="true" frameborder="0")
+      footer.section__footer.section__footer_desktop.text-center
+        a.btn.btn_lg.btn_colored(hre="#") Принять участие
+    .section__col.section__col_lg
+      .section__title.section__title_lg.text-left Привет, друзья!
+      .content.content_pr
+        .content__intro
+          | Меня зовут 
+          a.text-underline(href="https://instagram.com/onwaves_school?igshid=n63r2zcitb9w" rel="nofollow" target="_blank") Оксана Ференчук
+          | , я независимый музыкант, певица и педагог по вокалу.
+        p Я создала школу свободного голоса «По волнам», чтобы вы ощутили свободу творчества, самовыражения и получили удовольствие от процесса и результата. А результатом будет ваш свободный и яркий голос, умение выразить себя и свои идеи при помощи музыки и искусства.
+        p Основной курс школы состоит из трёх уровней - трёх ВОЛН, которые помогут вам, шаг за шагом стать увереннее в себе, полюбить свой голос и развить навыки публичных выступлений.
+        footer.content__footer
+          svg.icon-fluid
+            use(xlink:href="#icon-wave")
+      footer.section__footer.section__footer_mobile.text-center
+        a.btn.btn_lg.btn_colored(hre="#") Принять участие
+
+  #target.section.section_leftbg
+    .section__wrapper
+      .section__title.section__title_lg.section__title_qr
+        | Этот курс
+        br
+        | для тебя
+        br
+        | если ...
+      .feature.feature_col
+        svg.feature__icon
+          use(xlink:href="#icon-stars")
+        .feature__text
+          | ... ты всегда потрясающе пел! Особенно в детстве, но со временем перестал. 
+          span.font-weight-bold Мечта 
+          | так и оставалась мечтой.
+      .feature.feature_col
+        svg.feature__icon
+          use(xlink:href="#icon-drama")
+        .feature__text
+          | ... очень хочешь 
+          span.font-weight-bold научиться петь  
+          | и все свои эмоции выражать свободно.
+      .feature.feature_col
+        svg.feature__icon
+          use(xlink:href="#icon-notes")
+        .feature__text
+          | ... хочешь научиться 
+          span.font-weight-bold управлять своим голосом, 
+          | улучшить дикцию, слух и чувство ритма.
+      .feature.feature_col
+        svg.feature__icon
+          use(xlink:href="#icon-jewelry")
+        .feature__text
+          | ... ты мечтаешь освободить, узнать и полюбить свой голос, голос своей души. 
+          span.font-weight-bold Раскрыть его потенциал 
+          | и силу.
+      .feature.feature_col
+        svg.feature__icon
+          use(xlink:href="#icon-emoji")
+        .feature__text
+          | ... ты поешь сейчас. Но где-то глубоко в 
+          span.font-weight-bold душЕ, 
+          | или в 
+          span.font-weight-bold дУше.
+
+    .info.info_light
+      .container
+        .info__wrapper.info__wrapper_right
+          .info__title Чему ты научишься?
+          .info__content.info__content_flex
+            ol.info__col
+              li
+                span.list-counter 1.
+                | Говорить и петь свободно 
+              li
+                span.list-counter 2.
+                | Освоишь базовые техники дыхания и актерского мастерства
+              li
+                span.list-counter 3.
+                | Приобретешь навык публичных выступлений 
+              li
+                span.list-counter 4.
+                | Разовьешь музыкальный вкус 
+            ol.info__col
+              li
+                span.list-counter 5.
+                | Найдешь свой стиль 
+              li
+                span.list-counter 6.
+                | Напишешь песню 
+              li
+                span.list-counter 7.
+                | Начнешь себе аккомпанировать  
+              li
+                span.list-counter 8.
+                | Прокачаешь харизму 
+
+  .section.section_widebg
+    .section__wrapper
+      .section__col.section__col_sm.section__col_nopr
+        .section__title.section__title_lg.text-left
+          | Из чего
+          br
+          | состоят
+          br
+          | базовые
+          br
+          | курсы
+      .section__col.section__col_md.section__col_nopr
+        .section__feature
+          .section__subtitle 4 недели
+          | длится один курс из основного блока (одна волна)
+        .section__feature
+          .section__subtitle 3-5 минут
+          | упражнения в формате коротких видеороликов
+        .section__feature
+          .section__subtitle 15-20 минут
+          | в день займет выполнение заданий с понедельника по пятницу
+        .section__feature
+          .section__subtitle Каждую неделю
+          | домашние задания, дополнительные материалы, вебинары
+
+  .info.info_mb
+    .container
+      .info__wrapper
+        .info__title Что такое кураторство? 
+        .info__content
+          p Это полноценная обратная связь в процессе обучения
+          ul
+            li чат со студентами, куратором и Оксаной
+            li видео конференции каждую неделю
+            li проверка домашних заданий
+            li ответы на все вопросы в ходе обучения, поддержка 24/7
+            li в конце обучения выдаём именной сертификат :)
+        footer.info__footer При покупке базовой комплектации вы получаете доступ к чату со студентами и куратором, уроки проходите самостоятельно.
+
+  #price.container.container_mb
+    .grid.grid_offset
+      .card.card_offset.card_hovered
+        a.card__picture(href="#")
+          img.img-fluid(src="/img/content/courses/1.jpg" alt="")
+        .card__body.card__body_visible
+          header.card__header
+            a.card__title(href="#") пробное занятие
+          footer.card__footer
+            .card__inner
+              .card__subtitle Стоимость курса
+              .card__price.card__price_colored бесплатно
+            a.card__readmore(href="#")
+              | узнать больше
+              svg.icon-next
+                use(xlink:href="#icon-arrow-long")
+            a.btn.btn_lg.btn_colored(href="#" data-toggle="modal" data-target="#test") Записаться на курс
+        .card__body.card__body_hidden
+          header.card__header
+            a.card__title(href="#") пробное занятие
+          footer.card__footer
+            .card__inner
+              .card__text Поможет развить ваш музыкальный слух, ваше чувство ритма и раскрыть творческий потенциал. Мы окунёмся в мир актёра, поработаем с дикцией и артикуляцией. По итогу этой
+            a.card__readmore(href="#")
+              | узнать больше
+              svg.icon-next
+                use(xlink:href="#icon-arrow-long")
+            a.btn.btn_lg.btn_colored(href="#" data-toggle="modal" data-target="#test") Записаться на курс
+      .card.card_offset.card_hovered
+        a.card__picture(href="#")
+          img.img-fluid(src="/img/content/courses/2.jpg" alt="")
+        .card__body.card__body_visible
+          header.card__header
+            a.card__title(href="#") Вторая волна
+          footer.card__footer
+            .card__inner
+              .card__subtitle Курс «Первая волна»‎
+              .card__price.card__price_colored 7 999₽
+            .card__inner
+              .card__subtitle Курс с куратором
+              .card__price 11 998₽
+            a.card__readmore(href="#")
+              | узнать больше
+              svg.icon-next
+                use(xlink:href="#icon-arrow-long")
+            a.btn.btn_lg.btn_colored(href="#") перейти к курсу
+        .card__body.card__body_hidden
+          header.card__header
+            a.card__title(href="#") пробное занятие
+          footer.card__footer
+            .card__inner
+              .card__text Поможет развить ваш музыкальный слух, ваше чувство ритма и раскрыть творческий потенциал. Мы окунёмся в мир актёра, поработаем с дикцией и артикуляцией. По итогу этой
+            a.card__readmore(href="#")
+              | узнать больше
+              svg.icon-next
+                use(xlink:href="#icon-arrow-long")
+            a.btn.btn_lg.btn_colored(href="#" data-toggle="modal" data-target="#test") Записаться на курс
+      .card.card_offset.card_hovered
+        a.card__picture(href="#")
+          span.card__label 20%
+          img.img-fluid(src="/img/content/courses/3.jpg" alt="")
+        .card__body.card__body_visible
+          header.card__header
+            a.card__title(href="#") Третья волна
+          footer.card__footer
+            .card__inner
+              .card__subtitle Стоимость курса
+              .card__price.card__price_colored 7 999₽
+              .card__price.card__price_old 8 999₽
+            .card__inner
+              .card__subtitle Курс с куратором
+              .card__price 11 998₽
+            a.card__readmore(href="#")
+              | узнать больше
+              svg.icon-next
+                use(xlink:href="#icon-arrow-long")
+            a.btn.btn_lg.btn_colored(href="#") перейти к курсу
+        .card__body.card__body_hidden
+          header.card__header
+            a.card__title(href="#") пробное занятие
+          footer.card__footer
+            .card__inner
+              .card__text Поможет развить ваш музыкальный слух, ваше чувство ритма и раскрыть творческий потенциал. Мы окунёмся в мир актёра, поработаем с дикцией и артикуляцией. По итогу этой
+            a.card__readmore(href="#")
+              | узнать больше
+              svg.icon-next
+                use(xlink:href="#icon-arrow-long")
+            a.btn.btn_lg.btn_colored(href="#" data-toggle="modal" data-target="#test") Записаться на курс
+      .card.card_offset.card_hovered
+        a.card__picture(href="#")
+          img.img-fluid(src="/img/content/courses/3.jpg" alt="")
+        .card__body.card__body_visible
+          header.card__header
+            a.card__title(href="#") Основы игры на укулеле
+          footer.card__footer
+            .card__inner
+              .card__subtitle Стоимость курса
+              .card__price.card__price_colored 7 999₽
+            .card__inner
+              .card__subtitle Курс с куратором
+              .card__price 11 998₽
+            a.card__readmore(href="#")
+              | узнать больше
+              svg.icon-next
+                use(xlink:href="#icon-arrow-long")
+            a.btn.btn_lg.btn_colored(href="#") перейти к курсу
+        .card__body.card__body_hidden
+          header.card__header
+            a.card__title(href="#") пробное занятие
+          footer.card__footer
+            .card__inner
+              .card__text Поможет развить ваш музыкальный слух, ваше чувство ритма и раскрыть творческий потенциал. Мы окунёмся в мир актёра, поработаем с дикцией и артикуляцией. По итогу этой
+            a.card__readmore(href="#")
+              | узнать больше
+              svg.icon-next
+                use(xlink:href="#icon-arrow-long")
+            a.btn.btn_lg.btn_colored(href="#" data-toggle="modal" data-target="#test") Записаться на курс
+      .card.card_offset.card_hovered
+        a.card__picture(href="#")
+          img.img-fluid(src="/img/content/courses/3.jpg" alt="")
+        .card__body.card__body_visible
+          header.card__header
+            a.card__title(href="#") Основы игры на фортепиано
+          footer.card__footer
+            .card__inner
+              .card__subtitle Стоимость курса
+              .card__price.card__price_colored 7 999₽
+            .card__inner
+              .card__subtitle Курс с куратором
+              .card__price 11 998₽
+            a.card__readmore(href="#")
+              | узнать больше
+              svg.icon-next
+                use(xlink:href="#icon-arrow-long")
+            a.btn.btn_lg.btn_colored(href="#") перейти к курсу
+        .card__body.card__body_hidden
+          header.card__header
+            a.card__title(href="#") пробное занятие
+          footer.card__footer
+            .card__inner
+              .card__text Поможет развить ваш музыкальный слух, ваше чувство ритма и раскрыть творческий потенциал. Мы окунёмся в мир актёра, поработаем с дикцией и артикуляцией. По итогу этой
+            a.card__readmore(href="#")
+              | узнать больше
+              svg.icon-next
+                use(xlink:href="#icon-arrow-long")
+            a.btn.btn_lg.btn_colored(href="#" data-toggle="modal" data-target="#test") Записаться на курс
+      .card.card_offset.card_hovered
+        a.card__picture(href="#")
+          img.img-fluid(src="/img/content/courses/3.jpg" alt="")
+        .card__body.card__body_visible
+          header.card__header
+            a.card__title(href="#") Основы диджеинга
+          footer.card__footer
+            .card__inner
+              .card__subtitle Стоимость курса
+              .card__price.card__price_colored 7 999₽
+            .card__inner
+              .card__subtitle Курс с куратором
+              .card__price 11 998₽
+            a.card__readmore(href="#")
+              | узнать больше
+              svg.icon-next
+                use(xlink:href="#icon-arrow-long")
+            a.btn.btn_lg.btn_colored(href="#") перейти к курсу
+        .card__body.card__body_hidden
+          header.card__header
+            a.card__title(href="#") пробное занятие
+          footer.card__footer
+            .card__inner
+              .card__text Поможет развить ваш музыкальный слух, ваше чувство ритма и раскрыть творческий потенциал. Мы окунёмся в мир актёра, поработаем с дикцией и артикуляцией. По итогу этой
+            a.card__readmore(href="#")
+              | узнать больше
+              svg.icon-next
+                use(xlink:href="#icon-arrow-long")
+            a.btn.btn_lg.btn_colored(href="#" data-toggle="modal" data-target="#test") Записаться на курс
+
+  .offer
+    .offer__wrapper
+      .offer__col.offer__col_top
+        .offer__title цена курса «первая волна»
+        .offer__row
+          .offer__feature.offer__feature_sale -20
+          .offer__feature
+            img.img-fluid(src="/img/content/tooltip.jpg" alt="")
+        .offer__row.offer__row_mb
+          .offer__price.offer__price_colored 5 199₽
+          .offer__price.offer__price_old 7 997₽
+        .counter
+          .counter__hidden
+          .counter__date 2021-04-05 23:59:59
+          .counter__title  До повышения цены осталось:
+          .counter__wrapper
+        footer.offer__footer Старт курса:
+          span.offer__date 10. 03. 2021  
+      .offer__col
+        .offer__title
+          |Записаться 
+          br
+          |на курсы
+        form.form(action="#")
+          .form__body
+            .form__item
+              input.form__field(type="text" value="" placeholder="Имя*")
+            .form__item
+              input.form__field(type="text" value="" placeholder="Почта*")
+            .form__item
+              input.form__field(type="text" value="" placeholder="Телефон*")
+          footer.form__footer
+            input.btn.btn_xl.btn_colored(type="submit" value="хочу владеть своим голосом!")
+          a.form__link(href="#" target="_blank") Политика конфиденциальности
+
+  #reviews.section.section_minmb
+    .section__wrapper
+      .section__title.section__title_lg.section__title_hf Отзывы наших студентов
+      //-.swiper-container
+        .swiper-wrapper
+          .swiper-slide
+            .review
+              a.review__picture(href="#")
+                img.img-fluid(src="/img/content/reviews/1.jpg" alt="")
+              a.review__title(href="#")
+                | Школа шведского языка
+                svg.icon-next
+                  use(xlink:href="#icon-arrow-long")
+          .swiper-slide
+            .review
+              a.review__picture(href="#")
+                img.img-fluid(src="/img/content/reviews/2.jpg" alt="")
+              a.review__title(href="#")
+                | SUPERPET
+                svg.icon-next
+                  use(xlink:href="#icon-arrow-long")
+          .swiper-slide
+            .review
+              a.review__picture(href="#")
+                img.img-fluid(src="/img/content/reviews/3.jpg" alt="")
+              a.review__title(href="#")
+                | Школа дизайна Маши Чёрной
+                svg.icon-next
+                  use(xlink:href="#icon-arrow-long")
+        .swiper-nav
+          button.swiper-btn.swiper-btn-prev(type="button")
+            svg.icon-fluid
+              use(xlink:href="#icon-arrow-long")
+          button.swiper-btn.swiper-btn-next(type="button")
+            svg.icon-fluid
+              use(xlink:href="#icon-arrow-long")
+    footer.section__footer.text-center
+      a.btn.btn_lg.btn_colored(href="#") Зарегистрироваться
+    .text-center
+      a.form__link(href="#" target="_blank") Политика конфиденциальности
+
+  .offer.offer_light
+    .offer__wrapper
+      .offer__col.offer__col_top
+        .offer__title.offer__title_mobile 3 курса и получи скидку!
+        .offer__title.offer__title_desktop
+          | Акция! Учись выгодно!
+          br
+          | купи сразу 3 курса и 
+          br
+          | получи скидку!
+        .counter
+          .counter__hidden
+          .counter__date 2021-04-02 23:59:59
+          .counter__title  До повышения цены осталось:
+          .counter__wrapper
+        .offer__row
+          .offer__feature
+            img.img-fluid(src="/img/content/tooltip.jpg" alt="")
+          .offer__feature
+            img.img-fluid(src="/img/content/tooltip.jpg" alt="")
+          .offer__feature
+            img.img-fluid(src="/img/content/tooltip.jpg" alt="")
+          .offer__feature.offer__feature_sale.offer__feature_ml -20
+        .offer__row
+          .offer__subtitle Общая сумма
+          .offer__price.offer__price_sm.offer__price_colored
+            | 19 199₽
+          .offer__price.offer__price_old 23 997₽
+      .offer__col
+        .offer__title
+          | Записаться 
+          br
+          |на курсы
+        form.form(action="#")
+          .form__body
+            .form__item
+              input.form__field(type="text" value="" placeholder="Имя*")
+            .form__item
+              input.form__field(type="text" value="" placeholder="Почта*")
+            .form__item
+              input.form__field(type="text" value="" placeholder="Телефон*")
+          footer.form__footer
+            input.btn.btn_lg.btn_colored(type="submit" value="записаться на курсы")
+          a.form__link(href="#" target="_blank") Политика конфиденциальности
+
+  .section.section_rightbg
+    .section__wrapper
+      .section__col
+        .section__title.text-left
+          | Регистрируйся и 
+          br
+          | получи пробный урок 
+          span.text-lg.text-colored бесплатно
+        form.form(action="#")
+          .form__body
+            .form__item
+              input.form__field(type="text" value="" placeholder="Имя*")
+            .form__item
+              input.form__field(type="text" value="" placeholder="Почта*")
+            .form__item
+              input.form__field(type="text" value="" placeholder="Телефон*")
+          footer.form__footer
+            input.btn.btn_lg.btn_colored(type="submit" value="получить урок")
+          a.form__link(href="#" target="_blank") Политика конфиденциальности
+      .section__col.section__col_column
+        .play(data-toggle="modal" data-target="#play")
+          .play__text
+            svg.icon-fluid
+              use(xlink:href="#icon-text")
+          .play__btn
+            svg.icon-fluid
+              use(xlink:href="#icon-play")
+    a.up.page-anchor(href="#top")
+      span.up__icon
+        svg.icon-fluid
+          use(xlink:href="#icon-up")
+      span.up__title Наверх

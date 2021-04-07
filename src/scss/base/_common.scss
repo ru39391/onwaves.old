@@ -1,0 +1,87 @@
+body {
+	font: $font-size_default $font-family_default;
+	line-height: $line-height_default;
+	color: $color__text_default;
+}
+
+h1 {
+    @extend %title-default;
+}
+
+a {
+    @extend %link-default;
+}
+
+input {
+    outline: 0;
+    outline: none;
+}
+
+button {
+    outline: 0;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        outline: 0;
+        cursor: pointer;
+    }
+}
+
+.text-colored {
+    color: $color__brand_optional;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.icons {
+    display: none;
+}
+
+.icon-fluid {
+    @include size(100%,100%);
+    pointer-events: none;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.preloader {
+    @include inline-block;
+    @include size(15px,15px);
+}
+
+.icon-next {
+    @include fw(18px);
+    @include size(18px,12px);
+    margin: 0 0 0 4px;
+}
+
+.list-counter {
+    @extend %title-default;
+    @include fw(24px);
+    @include fs-lh(36px,48px);
+    margin: 0 6px 0 0;
+    color: $color__brand_optional;
+}
+
+.page-anchor {
+    * {
+        pointer-events: none;
+    }
+}
+
+.video {
+    &.video_mb {
+        @include media-breakpoint-up(lg) {
+            margin: 0 0 44px; 
+        }
+    
+        @include media-breakpoint-down(md) {
+            margin: 0 0 16px; 
+        }
+    }
+}

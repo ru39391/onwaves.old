@@ -1,0 +1,57 @@
+extends base.pug
+
+block meta
+  - var title = 'Базовые курсы / Первая волна';
+
+block content
+    .content__section
+        .content__video.embed-responsive.embed-responsive-16by9
+            iframe.embed-responsive-item(src="https://player.vimeo.com/video/464104635?app_id=122963" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" title="1 1 вступление" data-ready="true" frameborder="0")
+        nav.control
+            a.control__item.control__item_prev(href="#")
+                svg.control__icon
+                    use(xlink:href="#icon-arrow")
+                | предыдущий урок
+            a.control__item.control__item_next(href="#")
+                svg.control__icon
+                    use(xlink:href="#icon-arrow")
+                | следующий урок 
+
+    .content__section
+        .content__subtitle Вступление
+        .content__text
+            p
+                | Состоит из базовых упражнений, навыков, необходимых для свободного владения голосом.
+                br
+                | Шаг за шагом мы с вами исследуем себя, своё тело, дыхание, резонаторы ( где вибрирует звук), ваш уникальный звук и ваши эмоции.
+                br
+                | По окончанию 1 волны, мы с вами споём нашу первую песню. 
+
+    .content__section
+        .content__inner
+            .content__subtitle Аудио
+            .content__content
+                a.btn.btn_sm.btn_colored(href="#") minus_pesni.mp3
+
+        .content__inner
+            .content__subtitle Документы
+            .content__content
+                a.btn.btn_sm.btn_colored(href="#")
+                    span.preloader
+
+block tooltip
+    .tooltip
+        button.tooltip__close(type="button") &times;
+        .tooltip__section.tooltip__section_intro
+            .tooltip__text Следуйте подсказкам в описании, чтобы ваше обучение было максимально эффективным:
+        .tooltip__section
+            .tooltip__title Базовые курсы
+        .tooltip__section
+            .tooltip__title Первая волна
+            img.tooltip__img.img-fluid(src="../img/content/tooltip.jpg" alt="")
+            .tooltip__text Эта волна посвящена самым базовым упражнениям, фундаментальным для каждого голоса. Мы разберемся, что значит правильное певческое дыхание, найдем опору для звука. Узнаем, где находятся наши резонаторы и озвучим в них. Поиграем в актеров и примерим разные эмоции, чтобы понять важность интонации голоса. И конечно зазвучим в упражнениях на развитие гибкости голоса.
+        .tooltip__section
+            .tooltip__title 1 неделя
+            .tooltip__text Что такое правильное певческое дыхание? Как найти опору для звука? Как сделать выдох длинным и спокойным? Все упражнения на этой неделе посвящены дыханию.
+        .tooltip__section
+            .tooltip__title 2 день

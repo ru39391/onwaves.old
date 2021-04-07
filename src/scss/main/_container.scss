@@ -1,0 +1,12 @@
+.container {
+    @extend %container;
+
+    &.container_flex {
+        @extend %d-flex;
+        align-items: center;
+    }
+    
+    &.container_mb {
+        margin-bottom: 52px;
+    }
+}

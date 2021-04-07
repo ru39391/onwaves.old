@@ -1,0 +1,21 @@
+$font-family_default: 'Roboto', sans-serif;
+$font-family_title: 'Oswald', sans-serif;
+$font-size_default: 14px;
+
+$line-height_default: 1;
+$line-height_content: 1.4;
+
+$color__brand_default: #481CC3;
+$color__brand_optional: #552CE8;
+$color__text_default: #070657;
+$color__danger: #EB5757;
+
+$color__link: $color__brand_default;
+$color__link_hover: $color__brand_optional;
+
+$color__border: $color__brand_optional;
+
+$btn__base_top: #14E0EE;
+$btn__base_bottom: #0ECDDC;
+$btn__colored_top: #5B31F3;
+$btn__colored_bottom: #501CC3;

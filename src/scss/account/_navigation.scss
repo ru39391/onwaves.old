@@ -1,0 +1,37 @@
+.navigation {
+    @extend %d-flex;
+    align-items: center;
+}
+
+.navigation__item {
+    @extend %title-default;
+    @include fw(35px);
+    @include size(35px,35px);    
+    margin: 0 10px 10px 0;
+    border-radius: 15px;
+    text-align: center;
+    color: $color__brand_optional;
+    border: 2px solid $color__brand_optional;
+
+    &.navigation__item_complete {
+        @extend %flex-item;
+        justify-content: center;
+    }
+
+    &.navigation__item_wrong {
+        @extend %flex-item;
+        justify-content: center;
+        border-color: $color__danger;
+    }
+
+    &.navigation__item_current {
+        @include grad($btn__colored_top,$btn__colored_bottom);
+        color: #fff;
+        border-color: rgba(0,0,0,0);
+    }
+}
+
+.navigation__icon {
+    @include fw(18px);
+    @include size(18px,18px);
+}

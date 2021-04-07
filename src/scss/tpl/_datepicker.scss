@@ -1,0 +1,29 @@
+.datepickers-container {
+    .datepicker {
+        z-index: 1060;
+        color: $color__text_default;
+        border-radius: 1px;
+        border-color: $btn__colored_top;
+        box-shadow: 1px 1px 15px 0 rgba(40,15,112,.2);
+    }
+
+    .datepicker--pointer {
+        border-color: $btn__colored_top;
+    }
+
+    .datepicker--day-name {
+        color: $btn__colored_top;
+    }
+
+    .datepicker--cell {
+        &.-selected- {
+            color: #fff;
+            background: $btn__colored_top !important;
+
+            &:focus,
+            &:hover {
+                background: $btn__colored_top !important;
+            }
+        }
+    }
+}

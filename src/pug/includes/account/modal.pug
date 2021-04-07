@@ -1,0 +1,14 @@
+.modal.modal_custom.fade(id="dialog" tabindex="-1" role="dialog" aria-hidden="true")
+	.modal-dialog
+		.modal-content
+			.modal-header.modal-header_column
+				.modal-title.modal-title_flex
+					svg.modal__icon
+						use(xlink:href="#icon-danger")
+					| Неправильный ответ
+					br
+					| на вопрос №4
+			.modal-body.text-center
+				span.text-colored Правильный ответ “Треугольник”
+			footer.modal-footer.text-center
+				button.btn.btn_regular.btn_colored(type="button" data-dismiss="modal" aria-label="Close") продолжить

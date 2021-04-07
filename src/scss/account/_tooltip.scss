@@ -1,0 +1,60 @@
+.tooltip {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    overflow-y: auto;
+    background: #f4f4f4;
+    transform: translateX(100%);
+    transition: all .3s ease;
+    box-shadow: -1px 1px 15px rgba(40,15,112,.2);
+
+    &.active {
+        transform: translateX(0);
+    }
+
+    @include media-breakpoint-up(sm) {
+        width: 320px;
+    }
+
+    @include media-breakpoint-only(xs) {
+        left: 50px;
+    }
+}
+
+.tooltip__close {
+    @extend %btn-default;
+    @include size(32px,32px);
+    @include font(22px,500);
+    position: absolute;
+    top: 30px;
+    right: 15px;
+    border-radius: 50%;
+    color: $color__brand_default;
+    border: 2px solid $color__brand_default;
+}
+
+.tooltip__section {
+    @include border(0 0 1px,#fff);
+    padding: 20px 16px;
+
+    &.tooltip__section_intro {
+        padding-right: 48px;
+    }
+}
+
+.tooltip__title {
+    @extend %title-default;
+    margin: 0 0 16px;
+}
+
+.tooltip__text {
+    @include fs-lh(14px,16px);
+}
+
+.tooltip__img {
+    width: 50%;
+    margin: 0 0 16px;
+    border-radius: 50%;
+}

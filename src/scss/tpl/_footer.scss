@@ -1,0 +1,135 @@
+.footer {
+    color: #fff;
+
+    @include media-breakpoint-up(lg) {
+        @include fw(100%);
+    }
+
+    @include media-breakpoint-down(md) {
+        text-align: center;
+    }
+
+    &.footer_container {
+        background: $btn__colored_top;
+
+        .footer__top {
+            @extend %container;
+        }
+
+        .footer__bottom {
+            @include px(16px);
+
+            @include media-breakpoint-up(xl) {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            @include media-breakpoint-down(lg) {
+                text-align: center;
+            }
+        }
+    }
+}
+
+.footer__top {
+    background: $btn__colored_top;
+
+    @include media-breakpoint-up(lg) {
+        display: flex;
+        padding: 40px 70px 10px;
+    }
+
+    @include media-breakpoint-down(md) {
+        padding: 40px 30px;
+    }
+}
+
+.footer__bottom {
+    @include fs-lh(12px,14px);
+    background: $color__brand_default;
+
+    @include media-breakpoint-up(lg) {
+        padding: 10px 70px;
+        text-align: right;
+    }
+
+    @include media-breakpoint-down(md) {
+        padding: 20px 30px;
+    }
+}
+
+.footer__nav {
+    @include media-breakpoint-down(md) {
+        margin: 0 0 40px;
+    }
+}
+
+.footer__link {
+    color: #fff;
+    text-decoration: underline;
+
+    @include media-breakpoint-down(lg) {
+        margin-bottom: 16px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        @include inline-block;
+        margin-right: 24px;
+    }
+
+    @include media-breakpoint-down(md) {
+        display: block;
+    }
+
+    &:hover,
+    &:focus {
+        color: #fff;
+    }
+}
+
+.footer__col {
+    @include media-breakpoint-up(lg) {
+        padding: 0 15px 0 0;
+    }
+
+    @include media-breakpoint-down(md) {
+        margin: 0 0 36px;
+    }
+
+    &:last-child {
+        @include media-breakpoint-down(md) {
+            margin: 0;
+        }
+    }
+
+    &.footer__col_sm {
+        @include media-breakpoint-up(lg) {
+            @include fw(100%/12*3);
+            text-align: right;
+        }
+    }
+
+    &.footer__col_md {
+        @include media-breakpoint-up(lg) {
+            @include fw(100%/12*4);
+        }
+    }
+
+    &.footer__col_lg {
+        @include media-breakpoint-up(lg) {
+            @include fw(100%/12*5);
+        }
+    }
+}
+
+.footer__title {
+    @extend %title-default;
+    color: #fff;
+    margin: 0 0 16px;
+}
+
+.footer__logo {
+    @include inline-block;
+    @include size(116px,116px);
+}

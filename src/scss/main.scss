@@ -1,0 +1,41 @@
+@import '~bootstrap/scss/bootstrap-reboot.scss';
+@import '~bootstrap/scss/utilities/embed';
+@import '~bootstrap/scss/utilities/text';
+@import '~bootstrap/scss/images';
+@import '~bootstrap/scss/modal';
+
+/* base */
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/extends';
+@import 'base/common';
+
+/* tpl */
+@import 'tpl/btn';
+@import 'tpl/grid';
+@import 'tpl/card';
+@import 'tpl/social';
+@import 'tpl/offer';
+@import 'tpl/counter';
+@import 'tpl/contacts';
+@import 'tpl/selecter';
+@import 'tpl/datepicker';
+@import 'tpl/footer';
+
+/* main */
+@import 'main/up';
+@import 'main/nav';
+@import 'main/form';
+@import 'main/modal';
+@import 'main/header';
+@import 'main/section';
+@import 'main/container';
+@import 'main/promo';
+@import 'main/about';
+@import 'main/info';
+@import 'main/plan';
+@import 'main/play';
+@import 'main/intro';
+@import 'main/content';
+@import 'main/feature';
+@import 'main/features';

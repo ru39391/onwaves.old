@@ -1,0 +1,380 @@
+block meta
+  - var title = '';
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+
+    title Личный кабинет / #{title}
+    meta(name="keywords" content="")
+    meta(name="description" content="")
+
+    link(href="../img/favicon.ico" rel="shortcut icon")
+
+  body
+    .icons
+    block panel
+        .panel
+            .panel__top
+                header.panel__header
+                    .panel__user
+                        .panel__user-picture
+                            img.img-fluid(src="../img/content/userpic.jpg" alt="")
+                        .panel__user-title Владимир
+                    a.panel__logout(href="#")
+                        svg.icon-fluid
+                            use(xlink:href="#icon-logout")
+                .panel__bookmark
+                    a.btn.btn_icon(href="#")
+                        svg.btn__icon
+                            use(xlink:href="#icon-bookmark")
+                nav.panel__menu
+                    a.panel__menu-item.panel__menu-item_current(href="#")
+                        span.panel__menu-icon
+                            svg.icon-fluid
+                                use(xlink:href="#icon-profile")
+                        span.panel__menu-title Редактировать профиль
+                    a.panel__menu-item(href="#")
+                        span.panel__menu-icon
+                            svg.icon-fluid
+                                use(xlink:href="#icon-courses")
+                        span.panel__menu-title Курсы
+                    a.panel__menu-item(href="#")
+                        span.panel__menu-icon
+                            svg.icon-fluid
+                                use(xlink:href="#icon-payment")
+                        span.panel__menu-title Платежи
+            footer.panel__footer
+                .panel__logo
+                    svg.icon-fluid
+                        use(xlink:href="#icon-logo-vertical")
+    .page
+        block sidebar
+            .sidebar
+                header.sidebar__header
+                    a.btn.btn_md.btn_flex(href="#")
+                        svg.btn__icon
+                            use(xlink:href="#icon-bookmark")
+                        | Продолжить с закладки
+                .sidebar__wrapper
+                    nav.leftmenu
+                        .leftmenu__item.leftmenu__item_category
+                            button.leftmenu__toggler(type="button")
+                                svg.leftmenu__icon
+                                    use(xlink:href="#icon-arrow")
+                            a.leftmenu__link(href="#") Базовые курсы
+                        .leftmenu__children
+                            .leftmenu__item.leftmenu__item_nopx
+                                a.leftmenu__link(href="#") Пробное занятие
+                            .leftmenu__item
+                                button.leftmenu__toggler(type="button")
+                                    svg.leftmenu__icon
+                                        use(xlink:href="#icon-arrow")
+                                a.leftmenu__link(href="#") Первая волна
+                            .leftmenu__children
+                                .leftmenu__item.leftmenu__item_locked
+                                    button.leftmenu__toggler(type="button")
+                                        svg.leftmenu__icon
+                                            use(xlink:href="#icon-arrow")
+                                    a.leftmenu__link(href="#") 1 неделя
+                                        svg.leftmenu__locked
+                                            use(xlink:href="#icon-lock")
+                                .leftmenu__children
+                                    .leftmenu__item.leftmenu__item_locked
+                                        a.leftmenu__link(href="#") 1 день
+                                            svg.leftmenu__locked
+                                                use(xlink:href="#icon-lock")
+                                    .leftmenu__item.leftmenu__item_locked
+                                        a.leftmenu__link(href="#") 2 день
+                                            svg.leftmenu__locked
+                                                use(xlink:href="#icon-lock")
+                                    .leftmenu__item.leftmenu__item_locked
+                                        a.leftmenu__link(href="#") 3 день
+                                            svg.leftmenu__locked
+                                                use(xlink:href="#icon-lock")
+                                .leftmenu__item.leftmenu__item_nopx
+                                    a.leftmenu__link(href="#") 2 неделя
+                                .leftmenu__item.leftmenu__item_nopx
+                                    a.leftmenu__link(href="#") 3 неделя
+                            .leftmenu__item
+                                button.leftmenu__toggler(type="button")
+                                    svg.leftmenu__icon
+                                        use(xlink:href="#icon-arrow")
+                                a.leftmenu__link(href="#") Вторая волна
+                            .leftmenu__item
+                                button.leftmenu__toggler(type="button")
+                                    svg.leftmenu__icon
+                                        use(xlink:href="#icon-arrow")
+                                a.leftmenu__link(href="#") Третья волна
+
+                        .leftmenu__item.leftmenu__item_category
+                            button.leftmenu__toggler(type="button")
+                                svg.leftmenu__icon
+                                    use(xlink:href="#icon-arrow")
+                            a.leftmenu__link(href="#") Спецкурсы
+                button.sidebar__toggler(type="button")
+                    svg.icon-fluid
+                        use(xlink:href="#icon-arrow")
+
+        block wrapper
+            .wrapper.wrapper_row
+                .content.content_sm.content_column
+                    header.content__header
+                        .content__title #{title}
+                        button.content__toggler.show-tooltip(type="button")
+                            svg.icon-fluid
+                                use(xlink:href="#icon-faq")
+                    block content
+                        .content__body
+                            p
+                                a.text-underline(href="#" data-toggle="modal" data-target="#error")
+                                    b Ошибка
+                            p
+                                a.text-underline(href="#" data-toggle="modal" data-target="#success")
+                                    b Действие успешно завершено
+                            p
+                                a.text-underline(href="#" data-toggle="modal" data-target="#info")
+                                    b Информационное сообщение
+
+                            p
+                                | .btn
+                                br
+                                br
+                                button.btn(type="button") Отправить
+                            
+                            p
+                                | .btn.btn_md
+                                br
+                                br
+                                button.btn.btn_md(type="button") Отправить
+                            
+                            p
+                                | .btn.btn_xs
+                                br
+                                br
+                                button.btn.btn_xs(type="button") Отправить
+                            
+                            p
+                                | .btn.btn_sm
+                                br
+                                br
+                                button.btn.btn_sm(type="button") Отправить
+                            
+                            p
+                                | .btn.btn_lg
+                                br
+                                br
+                                button.btn.btn_lg(type="button") Отправить
+                            
+                            p
+                                | .btn.btn_xl
+                                br
+                                br
+                                button.btn.btn_xl(type="button") Отправить
+                            
+                            p
+                                | .btn.btn_standart
+                                br
+                                br
+                                button.btn.btn_standart(type="button") Отправить
+                            
+                            p
+                                | .btn.btn_regular
+                                br
+                                br
+                                button.btn.btn_regular(type="button") Отправить
+                            p
+                                | .btn.btn_colored
+                                br
+                                br
+                                button.btn.btn_colored(type="button") Отправить
+                            
+                            p
+                                | .btn.btn_colored.btn_md
+                                br
+                                br
+                                button.btn.btn_colored.btn_md(type="button") Отправить
+                            
+                            p
+                                | .btn.btn_colored.btn_xs
+                                br
+                                br
+                                button.btn.btn_colored.btn_xs(type="button") Отправить
+                            
+                            p
+                                | .btn.btn_colored.btn_sm
+                                br
+                                br
+                                button.btn.btn_colored.btn_sm(type="button") Отправить
+                            
+                            p
+                                | .btn.btn_colored.btn_lg
+                                br
+                                br
+                                button.btn.btn_colored.btn_lg(type="button") Отправить
+                            
+                            p
+                                | .btn.btn_colored.btn_xl
+                                br
+                                br
+                                button.btn.btn_colored.btn_xl(type="button") Отправить
+                            
+                            p
+                                | .btn.btn_colored.btn_standart
+                                br
+                                br
+                                button.btn.btn_colored.btn_standart(type="button") Отправить
+                            
+                            p
+                                | .btn.btn_colored.btn_regular
+                                br
+                                br
+                                button.btn.btn_colored.btn_regular(type="button") Отправить
+                            
+                            p
+                                | .btn.btn_inverse
+                                br
+                                br
+                                button.btn.btn_inverse(type="button") Отправить
+                            
+                            p
+                                | .btn.btn_inverse.btn_md
+                                br
+                                br
+                                button.btn.btn_inverse.btn_md(type="button") Отправить
+                            
+                            p
+                                | .btn.btn_inverse.btn_xs
+                                br
+                                br
+                                button.btn.btn_inverse.btn_xs(type="button") Отправить
+                            
+                            p
+                                | .btn.btn_inverse.btn_sm
+                                br
+                                br
+                                button.btn.btn_inverse.btn_sm(type="button") Отправить
+                            
+                            p
+                                | .btn.btn_inverse.btn_lg
+                                br
+                                br
+                                button.btn.btn_inverse.btn_lg(type="button") Отправить
+                            
+                            p
+                                | .btn.btn_inverse.btn_xl
+                                br
+                                br
+                                button.btn.btn_inverse.btn_xl(type="button") Отправить
+                            
+                            p
+                                | .btn.btn_inverse.btn_standart
+                                br
+                                br
+                                button.btn.btn_inverse.btn_standart(type="button") Отправить
+                            
+                            p
+                                | .btn.btn_inverse.btn_regular
+                                br
+                                br
+                                button.btn.btn_inverse.btn_regular(type="button") Отправить
+
+                block rightmenu
+                    - var rightmenu = [{icon: '#icon-logo', title: 'Вступление'},{icon: '#icon-logo', title: 'Дыхание животом'},{icon: '#icon-logo', title: 'Дыхание огня'},{icon: '#icon-logo', title: 'Шипящий звук «Ф»'},{icon: '#icon-logo', title: 'три упражнения в одном блоке'},{icon: '#icon-logo', title: 'Дыхательный квадрат'},{icon: '#icon-logo', title: 'Шипящие звуки на 4 счета'},{icon: '#icon-logo', title: 'Губошлёп'},{icon: '#icon-logo', title: 'Мычание'},{icon: '#icon-logo', title: 'Природный стон'}];
+                    nav.rightmenu
+                        header.rightmenu__header
+                            .rightmenu__title Плейлист
+                        .rightmenu__wrapper
+                            a.rightmenu__item.rightmenu__item_current(href="#")
+                                span.rightmenu__picture
+                                    img.img-fluid(src="../img/content/logo.png" alt="")
+                                | Первая волна
+                            a.rightmenu__item(href="#")
+                                span.rightmenu__picture.rightmenu__bordered
+                                    svg.icon-fluid
+                                        use(xlink:href="#icon-test")
+                                | Проверочный тест первой недели
+                            div.rightmenu__item.rightmenu__item_blocked
+                                span.rightmenu__picture
+                                    img.img-fluid(src="../img/content/logo.png" alt="")
+                                | Упражнение акторов театра «КАБУКИ»
+                            div.rightmenu__item.rightmenu__item_blocked
+                                span.rightmenu__picture
+                                    img.img-fluid(src="../img/content/logo.png" alt="")
+                                | Танцевальная медитация
+                            a.rightmenu__item(href="#")
+                                span.rightmenu__picture.rightmenu__bordered
+                                    svg.icon-fluid
+                                        use(xlink:href="#icon-award")
+                                | Диплом
+                            each rightmenu__item in rightmenu
+                                a.rightmenu__item(href="#")
+                                    span.rightmenu__picture
+                                        svg.icon-fluid
+                                            use(xlink:href=(rightmenu__item.icon))
+                                    | #{rightmenu__item.title}
+
+                include includes/base/footer.pug
+
+    include includes/account/modal.pug
+
+    .modal.modal_custom.fade(id="error" tabindex="-1" role="dialog" aria-hidden="true")
+        .modal-dialog
+            .modal-content
+                .modal-header.modal-header_column
+                    .modal-title.modal-title_flex.modal-title_error
+                        svg.modal__icon
+                            use(xlink:href="#icon-danger")
+                        | Что-то
+                        br
+                        | пошло не так
+                .modal-body.text-center
+                    p.text-colored Текст сообщения
+                footer.modal-footer.text-center
+                    button.btn.btn_regular.btn_inverse(type="button" data-dismiss="modal" aria-label="Close") ОК
+
+    .modal.modal_custom.fade(id="success" tabindex="-1" role="dialog" aria-hidden="true")
+        .modal-dialog
+            .modal-content
+                .modal-header.modal-header_column
+                    .modal-title.modal-title_flex.modal-title_success
+                        svg.modal__icon
+                            use(xlink:href="#icon-success")
+                        | Действие
+                        br
+                        | успешно завершено
+                .modal-body.text-center
+                    p.text-colored Текст сообщения
+                footer.modal-footer.text-center
+                    button.btn.btn_regular.btn_inverse(type="button" data-dismiss="modal" aria-label="Close") ОК
+
+    .modal.modal_custom.fade(id="info" tabindex="-1" role="dialog" aria-hidden="true")
+        .modal-dialog
+            .modal-content
+                .modal-header.modal-header_column
+                    .modal-title.modal-title_flex
+                        svg.modal__icon
+                            use(xlink:href="#icon-info")
+                        | Информационное
+                        br
+                        | сообщение
+                .modal-body.text-center
+                    p.text-colored Текст сообщения
+                footer.modal-footer.text-center
+                    button.btn.btn_regular.btn_inverse(type="button" data-dismiss="modal" aria-label="Close") ОК
+
+    link(rel="preconnect" href="https://fonts.gstatic.com")
+    link(href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/formstone/1.4.20/js/core.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/formstone/1.4.20/js/dropdown.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/formstone/1.4.20/js/touch.js")
+
+    link(href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet")
+    script(src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js")
+
+    link(href="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/css/datepicker.min.css" rel="stylesheet")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/datepicker.min.js")

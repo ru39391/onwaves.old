@@ -1,0 +1,92 @@
+.sidebar {
+    z-index: 3;
+    background: #fff;
+    transition: all .3s ease;
+    box-shadow: 1px 1px 15px rgba(40, 15, 112, 0.2);
+
+    @include media-breakpoint-up(xl) {
+        @include fw(296px);
+        overflow-y: auto;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    @include media-breakpoint-down(lg) {
+        @include pos(0,50px,fixed);
+        bottom: 0;
+        width: 252px;
+        transform: translateX(-100%);
+    }
+
+    &.active {
+        @include media-breakpoint-down(lg) {
+            transform: translateX(0);
+
+            .sidebar__toggler {
+                background: #fff;
+                color: $color__brand_default;
+                box-shadow: 10px 1px 10px rgba(40, 15, 112, 0.2);
+
+                .icon-fluid {
+                    transform: rotate(0deg);
+                }
+            }
+        }
+    }
+}
+
+.sidebar__toggler {
+    @extend %btn-default;
+
+    @include media-breakpoint-up(xl) {
+        display: none;
+    }
+
+    @include media-breakpoint-down(lg) {
+        @include size(20px,20px);
+        @include grad($btn__colored_top,$btn__colored_bottom);
+        position: absolute;
+        top: 0;
+        right: -20px;
+        padding: 5px;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        color: #fff;
+        border-radius: 0 15px 15px 0;
+        transition: all .3s ease;
+
+        .icon-fluid {
+            transform: rotate(180deg);
+            transition: all .3s ease;
+        }
+    }
+}
+
+.sidebar__header {
+    @include border(0 0 1px,#f4f4f4);
+    @include offset(0 0 5px,36px 28px 30px);
+    height: 100px;
+    justify-content: center;
+
+    @include media-breakpoint-up(xl) {
+        display: flex;
+    }
+
+    @include media-breakpoint-down(lg) {
+        display: none;
+    }
+}
+
+.sidebar__wrapper {
+    @include media-breakpoint-up(xl) {
+        padding: 0 30px 0 3px;
+    }
+
+    @include media-breakpoint-down(lg) {
+        height: 100%;
+        padding: 56px 0 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}

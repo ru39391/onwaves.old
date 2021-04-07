@@ -1,0 +1,47 @@
+extends base.pug
+
+block meta
+  - var title = 'оформление оплаты';
+
+block panel
+
+block sidebar
+
+block wrapper
+  .wrapper.wrapper_column.wrapper_wide
+    .content.content_lg
+      header.content__header.content__header_bg.content__header_center
+        .content__title.content__title_lg #{title}
+
+      block content
+        .content__body
+          form.form.form_centered(action="#")
+            .form__body
+              .form__item.form__item_mb
+                  input.form__checkbox(id="test1" name="test1" type="checkbox" value="")
+                  label.form__label.form__label_lg(for="test1") Курс «Первая волна» (6999₽)‎
+
+              .form__item.form__item_mb
+                  input.form__checkbox(id="test2" name="test2" type="checkbox" value="")
+                  label.form__label.form__label_lg(for="test2") Личный куратор (3999₽)‎
+
+              .form__item.form__item_mb
+                .form__title.form__title_colored У меня есть промокод:
+                .form__row.form__row_ac
+                  .form__col.form__col_sm
+                    input.form__field.form__field_bradius(type="text" value="")
+                  .form__col.form__col_md
+                    button.btn.btn_inverse(type="button") Применить
+            .form__footer.form__footer_row
+              .form__col
+                .form__row.form__row_ac
+                  .form__title.form__title_nomb
+                    | Итоговая
+                    br
+                    | сумма:
+                  .form__price 6 999₽
+              .form__col.form__col_right
+                input.btn.btn_xs.btn_colored(type="submit" value="оплатить")
+                button.btn.btn_xs.btn_colored(type="button") кредит
+
+    include includes/base/footer.pug

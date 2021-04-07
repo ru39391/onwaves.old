@@ -1,0 +1,214 @@
+.panel {
+    @extend %flex-column;
+    @include pos(0,0,fixed);
+    bottom: 0;
+    z-index: 4;
+    justify-content: space-between;
+    overflow: hidden;
+    transition: all .3s ease;
+    background: #F4F4F4;
+    box-shadow: 1px 1px 15px rgba(40, 15, 112, 0.2);
+
+    @include media-breakpoint-up(xl) {
+        width: 70px;
+        padding: 20px 10px 58px;
+    }
+
+    @include media-breakpoint-down(lg) {
+        width: 50px;
+        padding: 20px 4px;
+    }
+
+    &:hover {
+        @include media-breakpoint-up(xl) {
+            width: 256px;
+        }
+
+        & + .page {
+            @include media-breakpoint-up(xl) {
+                padding: 0 0 0 256px;
+            }
+        }
+
+        .panel__menu-item {
+            @include media-breakpoint-up(xl) {
+                text-indent: 0;
+            }
+        }
+
+        .panel__menu-title {
+            @include media-breakpoint-up(xl) {
+                transform: translateX(0);
+            }
+        }
+
+        .panel__menu-icon {
+            @include media-breakpoint-up(xl) {
+                margin: 0 15px 0 0;
+                transform: translateX(0);
+            }
+        }
+
+        .panel__user {
+            @include media-breakpoint-up(xl) {
+                text-indent: 0;
+            }
+        }
+
+        .panel__user-picture {
+            @include media-breakpoint-up(xl) {
+                margin: 0 10px 0 0;
+            }
+        }
+
+        .panel__user-title {
+            @include media-breakpoint-up(xl) {
+                transform: translateX(0);
+            }
+        }
+    }
+}
+
+.panel__header {
+    @include before;
+    @include offset(0 0 15px,0 0 20px);
+
+    @include media-breakpoint-up(xl) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    @include media-breakpoint-down(lg) {
+        text-align: center;
+    }
+
+    &:before {
+        left: 10px;
+        right: 10px;
+        bottom: 0;
+        height: 1px;
+        text-indent: 0;
+        background: #fff;
+        transition: all .3s ease;
+    }
+}
+
+.panel__bookmark {
+    @include media-breakpoint-up(xl) {
+        display: none;
+    }
+
+    @include media-breakpoint-down(lg) {
+        margin: 0 0 15px;
+    }
+}
+
+.panel__user {
+    @extend %flex-item;
+    text-indent: 999px;
+    color: $color__brand_default;
+
+    @include media-breakpoint-down(lg) {
+        margin: 0 0 20px;
+    }
+}
+
+.panel__user-picture {
+    text-indent: 0;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid $color__brand_optional;
+
+    @include media-breakpoint-up(xl) {
+        @include fw(50px);
+        @include size(50px,50px);
+    }
+
+    @include media-breakpoint-down(lg) {
+        @include fw(100%);
+    }
+}
+
+.panel__user-title {
+    transition: all .3s ease;
+    transform: translateX(100%);
+}
+
+.panel__logout {
+    @include fw(15px);
+    @include size(15px,21px);
+    @include inline-block;
+}
+
+.panel__menu-item {
+    @extend %flex-item;
+    @include offset(0 0 28px,10px);
+    text-indent: 999px;
+    white-space: nowrap;
+    transition: all .3s ease;
+
+    &.panel__menu-item_current,
+    &:hover {
+        background: #fff;
+    }
+
+    &:first-child {
+        @include before;
+        margin: 0 0 45px;
+
+        &:before {
+            left: 10px;
+            right: 10px;
+            bottom: -15px;
+            height: 1px;
+            text-indent: 0;
+            background: #fff;
+            transition: all .3s ease;
+        }
+    }
+}
+
+.panel__menu-icon {
+    @include fw(20px);
+    @include size(20px,20px);
+    text-indent: 0;
+    transition: all .3s ease;
+
+    @include media-breakpoint-up(xl) {
+        transform: translateX(5px);
+    }
+
+    @include media-breakpoint-down(lg) {
+        transform: translateX(1px);
+    }
+}
+
+.panel__menu-title {
+    transition: all .3s ease;
+    transform: translateX(100%);
+}
+
+.panel__footer {
+    @include media-breakpoint-down(lg) {
+        display: none;
+    }
+}
+
+.panel__logo {
+    text-align: center;
+
+    &.panel__logo_text {
+        margin: 0 0 8px;
+
+        .icon-fluid {
+            @include size(28px,112px);
+        }
+    }
+
+    &.panel__logo_img {
+        .icon-fluid {
+            @include size(45px,45px);
+        }
+    }
+}

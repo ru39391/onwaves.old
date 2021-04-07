@@ -1,0 +1,41 @@
+extends base.pug
+
+block meta
+  - var title = 'Первая волна / 1 неделя / 1 день';
+
+block content
+    .content__section
+        .content__inner.content__inner_flex
+            .content__title.content__title_col.content__title_lg Поздравляем!
+            .content__text.content__text_col.content__text_lg
+                p вы прошли курс «первая волна»
+                p введите свои данные для заполнения диплома, а также свяжитесь с нашими менеджерами чтобы получить подарки.
+            .content__picture.content__picture_col
+                img.img-fluid(src="../img/content/course-completed.jpg" alt="")
+        form.form.form_flex(action="#")
+            .form__item.form__item_col
+                input.form__field(type="text" value="")
+                .form__label Имя:
+            .form__item.form__item_col.form__item_mb
+                input.form__field(type="text" value="")
+                .form__label Фамилия:
+            footer.form__footer
+                a.btn.btn_regular.btn_colored(href="#") скачать диплом
+                a.btn.btn_regular.btn_colored(href="#") Отправить мне на почту
+
+block tooltip
+    .tooltip
+        button.tooltip__close(type="button") &times;
+        .tooltip__section.tooltip__section_intro
+            .tooltip__text Следуйте подсказкам в описании, чтобы ваше обучение было максимально эффективным:
+        .tooltip__section
+            .tooltip__title Базовые курсы
+        .tooltip__section
+            .tooltip__title Первая волна
+            img.tooltip__img.img-fluid(src="../img/content/tooltip.jpg" alt="")
+            .tooltip__text Эта волна посвящена самым базовым упражнениям, фундаментальным для каждого голоса. Мы разберемся, что значит правильное певческое дыхание, найдем опору для звука. Узнаем, где находятся наши резонаторы и озвучим в них. Поиграем в актеров и примерим разные эмоции, чтобы понять важность интонации голоса. И конечно зазвучим в упражнениях на развитие гибкости голоса.
+        .tooltip__section
+            .tooltip__title 1 неделя
+            .tooltip__text Что такое правильное певческое дыхание? Как найти опору для звука? Как сделать выдох длинным и спокойным? Все упражнения на этой неделе посвящены дыханию.
+        .tooltip__section
+            .tooltip__title 2 день

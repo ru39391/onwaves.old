@@ -1,0 +1,60 @@
+.rightmenu {
+    @extend %zi-2;
+    border: 1px solid #fff;
+    background: #E0F8FF;
+    box-shadow: 1px 1px 15px rgba(40, 15, 112, 0.2);
+
+    @include media-breakpoint-up(lg) {
+        @include fw(300px);
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    @include media-breakpoint-down(md) {
+        margin: -24px 0 0;
+    }
+}
+
+.rightmenu__header {
+    @include border(0 0 1px,#fff);
+    @include offset(0 0 14px,36px 30px 30px 20px);
+    height: 100px;
+}
+
+.rightmenu__title {
+    @extend %title-default;
+}
+
+.rightmenu__wrapper {
+    padding: 0 30px 0 10px;
+}
+
+.rightmenu__item {
+    @extend %flex-item;
+    @include font(12px,700);
+    @include offset(0 0 1px,4px 24px 4px 4px);
+    border: 4px solid rgba(0,0,0,0);
+    transition: all .3s ease;
+
+    &.rightmenu__item_current,
+    &:hover {
+        border-color: $color__border;
+    }
+
+    &.rightmenu__item_blocked {
+        opacity: 0.4;
+        border-color: rgba(0,0,0,0);
+    }
+}
+
+.rightmenu__picture {
+    @include fw(60px);
+    @include size(60px,60px);
+    margin: 0 20px 0 0;
+
+    &.rightmenu__bordered {
+        padding: 12px;
+        border: 2px solid $color__border;
+    }
+}

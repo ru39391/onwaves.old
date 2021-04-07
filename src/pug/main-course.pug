@@ -1,0 +1,238 @@
+extends main.pug
+
+block meta
+	- var title = 'Первая волна';
+
+block nav
+	nav.nav
+		button.nav__close(type="button")
+			svg.icon-fluid
+				use(xlink:href="#icon-close")
+		.nav__left.nav__left_end
+			a.nav__link.nav__link_main(href="#" data-toggle="modal" data-target="#auth") Вход
+			a.nav__link.nav__link_main(href="#" data-toggle="modal" data-target="#reg") Регистрация
+
+block page
+	.about
+		.container.container_flex
+			.about__col.about__col_lg
+				a.about__back(href="#")
+					svg.icon-fluid
+						use(xlink:href="#icon-back")
+			.about__col.about__col_md
+				h1 #{title}
+				.about__meta
+					.about__info
+						| Старт курса:
+						.about__date 12 марта 2021
+					.about__info
+						| Длительность курса:
+						.about__date 1 месяц
+				.about__content
+					p Эта волна посвящена самым базовым упражнениям, фундаментальным для каждого голоса. Мы разберемся, что значит правильное певческое дыхание, найдем опору для звука. Узнаем, где находятся наши резонаторы и озвучим в них. Поиграем в актеров и примерим разные эмоции, чтобы понять важность интонации голоса. И конечно зазвучим в упражнениях на развитие гибкости голоса.
+			.about__col.about__col_sm
+				.about__feature
+					.about__feature-value 60
+					| уроков
+				.about__feature
+					.about__feature-value 4
+					| контрольных теста
+				.about__feature
+					.about__feature-value 4
+					| учебных пособий
+	.promo
+		.promo__video.embed-responsive.embed-responsive-16by9
+			iframe.embed-responsive-item(src="https://player.vimeo.com/video/464104635?app_id=122963" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" title="1 1 вступление" data-ready="true" frameborder="0")
+		.promo__content
+			button.btn.btn_lg.btn_colored(type="button") Записаться на курс
+
+	.container
+		.section
+			.section__title После окончания курса вы получите
+			.features
+				.features__item
+					.features__item-icon
+						svg.icon-fluid
+							use(xlink:href="#icon-membership")
+					.features__item-title Членство клуба «ПОВОЛНАМ»
+				.features__item
+					.features__item-icon
+						svg.icon-fluid
+							use(xlink:href="#icon-docs")
+					.features__item-title
+						| Значок и диплом об 
+						span.text-nowrap окончании курса
+				.features__item
+					.features__item-icon
+						svg.icon-fluid
+							use(xlink:href="#icon-sales")
+					.features__item-title Скидку на другие курсы школы
+
+		.plan.plan_offset
+			.plan__col.plan__col_hf.plan__col_column
+				.plan__sale
+					.plan__sale-bg
+					.plan__sale-title
+						| скидка
+						br
+						| 20%
+				.plan__title
+					| Стоимость
+					br
+					| обучения:
+				.plan__meta
+					.plan__subtitle Курс «Первая волна»‎
+					.plan__value 6 399₽
+					.plan__value.plan__value_old 7 999₽
+				.plan__meta
+					.plan__subtitle Курс с куратором
+					.plan__value.plan__value_sm 11 998₽
+				.plan__about.plan__about_visible
+					.plan__info
+						| Старт курса:
+						.plan__date 12 марта 2021
+					.plan__info
+						| Длительность курса:
+						.plan__date 1 месяц
+			.plan__col.plan__col_hf
+				.plan__title
+					|Запись
+					br
+					|на курс
+				- var btns = [{appender: 'Добавить способ'},{appender: 'Добавить способ'},{appender: 'Добавить способ'},{appender: 'Добавить способ'},{appender: 'Добавить способ'},{appender: 'Добавить способ'},{appender: 'Добавить способ'}]
+				form.form(action="#")
+					.form__body
+						.form__item
+							input.form__field(type="text" value="" placeholder="Имя*")
+						.form__item
+							input.form__field(type="text" value="" placeholder="Почта*")
+						.form__item
+							input.form__field(type="text" value="" placeholder="Телефон*")
+						.form__title Удобные способы связи
+						each btns__item in btns
+							.form__item.form__item_extender
+								.form__row
+									.form__col
+										select.form__select
+											option Telegram
+											option WhatsApp
+											option VK
+											option Instagram
+											option Facebook
+									.form__col.form__col_aside
+										input.form__field(type="text" value="" placeholder="Номер, ссылка")
+										button.form__close.form__close_remover(type="button")
+											svg.icon-fluid
+												use(xlink:href="#icon-close-sm")
+						.form__item
+							button.form__btn.form__btn_appender(type="button") Добавить способ
+					footer.form__footer
+						input.btn.btn_lg.btn_colored(type="submit" value="записаться на курс")
+					a.form__link(href="#" target="_blank") Политика конфиденциальности
+		.plan.plan_offset
+			.plan__col.plan__col_hf.plan__col_column
+				.plan__title
+					| Стоимость
+					br
+					| обучения:
+				.plan__meta
+					.plan__subtitle Курс «Первая волна»‎
+					.plan__value 7 999₽
+				.plan__meta
+					.plan__subtitle Курс с куратором
+					.plan__value.plan__value_sm 11 998₽
+				.plan__about.plan__about_visible
+					.plan__info
+						| Старт курса:
+						.plan__date 12 марта 2021
+					.plan__info
+						| Длительность курса:
+						.plan__date 1 месяц
+			.plan__col.plan__col_hf
+				.plan__title
+					|Запись
+					br
+					|на курс
+				form.form(action="#")
+					.form__body
+						.form__item
+							input.form__field(type="text" value="" placeholder="Имя*")
+						.form__item
+							input.form__field(type="text" value="" placeholder="Почта*")
+						.form__item
+							input.form__field(type="text" value="" placeholder="Телефон*")
+					footer.form__footer
+						input.btn.btn_lg.btn_colored(type="submit" value="записаться на курс")
+					a.form__link(href="#" target="_blank") Политика конфиденциальности
+		.plan
+			.plan__col.plan__col_lg
+				.plan__title Стоимость обучения:
+				.plan__meta
+					.plan__subtitle Курс «Первая волна»‎
+					.plan__value 7 999₽
+				.plan__meta
+					.plan__subtitle Курс с куратором
+					.plan__value.plan__value_sm 11 998₽
+			.plan__about
+				.plan__info
+					| Старт курса:
+					.plan__date 12 марта 2021
+				.plan__info
+					| Длительность курса:
+					.plan__date 1 месяц
+			.plan__col.plan__col_sm
+				button.btn.btn_lg.btn_colored(type="button") Записаться на курс
+		.plan
+			.plan__col.plan__col_lg
+				.plan__title Стоимость обучения:
+				.plan__meta
+					.plan__subtitle Личный куратор
+					.plan__value.plan__value_sm 3 999₽
+			.plan__about
+				.plan__info
+					| Старт курса:
+					.plan__date 12 марта 2021
+				.plan__info
+					| Длительность курса:
+					.plan__date 1 месяц
+			.plan__col.plan__col_sm
+				button.btn.btn_lg.btn_colored(type="button") Записаться к куратору
+		.plan
+			.plan__col.plan__col_lg
+				.plan__title.plan__title_sm Стоимость обучения:
+				.plan__sale
+					.plan__sale-bg
+					.plan__sale-title
+						| скидка
+						br
+						| 20%
+				.plan__meta.plan__meta_sm
+					.plan__subtitle Курс «Первая волна»‎
+					.plan__value 6 999₽
+					.plan__value.plan__value_old 7 999₽
+				.plan__meta.plan__meta_sm
+					.plan__subtitle Курс с куратором
+					.plan__value.plan__value_sm 11 998₽
+			.plan__about
+				.plan__info
+					| Старт курса:
+					.plan__date 12 марта 2021
+				.plan__info
+					| Длительность курса:
+					.plan__date 1 месяц
+			.plan__col.plan__col_sm
+				button.btn.btn_lg.btn_colored(type="button") Записаться на курс
+
+	.info
+		.container
+			.info__wrapper
+				.info__title Что такое кураторство? 
+				.info__content
+					p Это полноценная обратная связь в процессе обучения
+					ul
+						li чат со студентами, куратором и Оксаной
+						li видео конференции каждую неделю
+						li проверка домашних заданий
+						li ответы на все вопросы в ходе обучения, поддержка 24/7
+						li в конце обучения выдаём именной сертификат :)
+				footer.info__footer При покупке базовой комплектации вы получаете доступ к чату со студентами и куратором, уроки проходите самостоятельно.

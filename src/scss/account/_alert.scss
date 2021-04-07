@@ -1,0 +1,15 @@
+.alert {
+    @extend %flex-column;
+    text-align: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.alert__header {
+    margin: 0 0 36px;
+}
+
+.alert__title {
+    @extend %title-default;
+    margin: 0 0 18px;
+}

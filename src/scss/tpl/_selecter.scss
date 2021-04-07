@@ -1,0 +1,199 @@
+/* fs-dropdown */
+.fs-dropdown {
+    position: relative;
+    z-index: 2;
+
+    &.fs-dropdown-open {
+        z-index: 3;
+
+        .fs-dropdown-selected {        
+            &:before {
+                transform: rotate(45deg);
+            }
+        
+            &:after {
+                transform: rotate(-45deg);
+            }
+        }
+
+        .fs-dropdown-options {
+            display: block;
+        }
+    }
+}
+
+.fs-dropdown-element {
+    @include pos(0,0);
+    @include size(100%,100%);
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0;
+
+    @include media-breakpoint-up(xl) {
+        display: none;
+    }
+
+    @include media-breakpoint-down(lg) {
+        display: block;
+    }
+}
+
+.fs-dropdown-selected {
+    @extend %btn-default;
+    @include before;
+    @include size(100%,30px);
+    @include fs-lh(14px,18px);
+    @include border(0 0 1px,$color__brand_optional);
+    color: $color__brand_optional;
+    display: block;
+    padding: 6px 20px 6px 0;
+    text-align: left;
+    letter-spacing: .05em;
+
+    &:before {
+        @include size(2px,12px);
+        top: 9px;
+        right: 14px;
+        transform: rotate(-45deg);
+        background: $color__brand_optional;
+    }
+
+    &:after {
+        @include size(2px,12px);
+        content: '';
+        position: absolute;
+        top: 9px;
+        right: 6px;
+        transform: rotate(45deg);
+        background: $color__brand_optional;
+    }
+}
+
+.fs-dropdown-options {
+    @include border(0 1px 1px,$color__brand_optional);
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: none;
+    overflow: hidden;
+    border-radius: 0 0 1px 1px;
+    box-shadow: 0 3px 15px 0 rgba(40,15,112,.2);
+}
+
+.fs-dropdown-item {
+    @extend %btn-default;
+    @include size(100%,30px);
+    @include border(0 0 1px,$color__brand_optional);
+    text-align: left;
+    display: block;
+    color: #6d59fe;
+    padding: 6px;
+    letter-spacing: .05em;
+    background: #fff;
+
+    &:last-child {
+        border: 0;
+    }
+
+    &:hover {
+        color: $color__brand_optional;
+    }
+
+    &.fs-dropdown-item_selected {
+        //color: $color__brand_optional;
+        color: #fff;
+        background: $color__brand_optional;
+    }
+}
+
+/* select2 */
+.select2 {
+    &.select2-container {
+        @extend .form__field;
+        @include size(100% !important,100% !important);
+
+        .select2-selection {
+            border: 0;
+            padding: 0;
+            border-radius: 0;
+            min-height: 100%;
+            background: none;
+
+            .select2-search__field {
+                margin: 0;
+                height: 13px;
+                font-family: $font-family_default;
+            }
+        }
+
+        .select2-selection__rendered {
+            margin: 0;
+        }
+
+        .select2-selection__choice {
+            border-radius: 1px !important;
+            border-color: $color__brand_optional !important;
+            background-color: #fff !important;
+            margin: 0 4px 2px 0 !important;
+        }
+
+        .select2-selection__choice__remove {
+            border-radius: 0 !important;
+            color: $color__brand_optional !important;
+            border-color: $color__brand_optional !important;
+
+            &:hover {
+                color: #fff !important;
+                background-color: $color__brand_optional !important;
+            }
+        }
+
+        .select2-selection__choice__display {
+            padding-left: 4px !important;
+            padding-right: 8px !important;
+        }
+    }
+
+    &.select2-container--focus {
+        .select2-selection {
+            border: 0 !important;
+            padding: 0;
+            border-radius: 0;
+            font-family: $font-family_default;
+        }
+    }
+}
+
+.select2-container {
+    &.select2-container--default {
+        .select2-dropdown {
+            @include border(0 1px 1px,$color__brand_optional);
+            border-radius: 0 0 1px 1px;
+            box-shadow: 0 3px 15px 0 rgba(40,15,112,.2);
+        }
+
+        .select2-results__option {
+            &.select2-results__option--selectable {
+                @include border(0 0 1px,$color__brand_optional);
+                color: #6d59fe;
+                padding: 6px;
+                letter-spacing: .05em;
+                background: #fff;
+            
+                &:last-child {
+                    border: 0;
+                }
+            
+                &:hover {
+                    color: $color__brand_optional;
+                }
+            
+                &.select2-results__option--selected {
+                    color: #fff;
+                    border-color: #fff;
+                    background: $color__brand_optional;
+                }
+            }
+        }
+    }
+}

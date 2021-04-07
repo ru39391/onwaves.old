@@ -1,0 +1,211 @@
+.content {
+    @extend %zi-1;
+    transition: all .3s ease;
+
+    @include media-breakpoint-up(lg) {
+        overflow-y: auto;
+    }
+
+    &.content_sm {
+        @include media-breakpoint-up(lg) {
+            @include fw(calc(100% - 300px));
+            height: 100vh;
+        }
+    }
+
+    &.content_lg {
+        @include media-breakpoint-up(lg) {
+            flex-grow: 1;
+        }
+    }
+
+    &.content_column {
+        @extend %flex-column;
+
+        .content__section {
+            flex-grow: 1;
+        }
+    }
+}
+
+.content__header {
+    @extend %d-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media-breakpoint-up(md) {
+        height: 100px;
+        padding: 36px 50px 30px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        @include offset(0 0 8px,18px 28px 0);
+    }
+
+    &.content__header_bg {
+        @include py(25px);
+        background: #E0F8FF;
+
+        @include media-breakpoint-up(md) {
+            margin: 0 0 30px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            @include px(20px);
+            margin: 0 0 20px;
+        }
+    }
+
+    &.content__header_center {
+        display: block;
+        text-align: center;
+    }
+}
+
+.content__toggler {
+    @extend %btn-default;
+    @include fw(35px);
+    @include size(35px,35px);
+    padding: 7px;
+    border-radius: 50%;
+    background: #F4F4F4;
+
+    @include media-breakpoint-down(sm) {
+        position: relative;
+        right: calc(-100% + 20px);
+    }
+}
+
+.content__body {
+    @include media-breakpoint-up(md) {
+        @include offset(0 0 30px,0 70px 0 50px);
+    }
+
+    @include media-breakpoint-down(sm) {
+        @include offset(0 0 20px,0 20px);
+    }
+}
+
+.content__section {
+    background: #F4F4F4;
+
+    @include media-breakpoint-up(md) {
+        @include offset(0 0 24px,22px 48px);
+    }
+
+    @include media-breakpoint-down(sm) {
+        @include offset(0 0 20px,20px 20px 16px);
+    }
+    
+    &:last-child {
+        //margin-bottom: 0;
+    }
+
+    &.content__section_column {
+        @extend %flex-column;
+
+        @include media-breakpoint-up(md) {
+            margin-bottom: 72px;
+        }
+    }
+}
+
+.content__video {    
+    max-height: 375px;
+    margin: 0 0 20px;
+}
+
+.content__title {
+    @extend %title-default;
+
+    @include media-breakpoint-down(sm) {
+        @include fw(100%);
+    }
+
+    &.content__title_lg {
+        @include media-breakpoint-up(md) {
+            @include fs-lh(36px,48px);
+        }
+    
+        @include media-breakpoint-down(sm) {
+            @include fs-lh(24px,30px);
+        }
+    }
+
+    &.content__title_col {
+        @include fw(100%);
+        text-align: center;
+
+        @include media-breakpoint-up(md) {
+            margin: 0 0 28px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            margin: 0 0 16px;
+        }
+    }
+}
+
+.content__subtitle {
+    @include font(18px,700);
+    margin: 0 0 8px;
+    letter-spacing: 0.05em;
+}
+
+.content__text {
+    &.content__text_col {
+        @include media-breakpoint-up(md) {
+            @include fw(100%/12*7);
+            padding: 0 36px 0 0;
+            margin: 0 0 30px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            @include fw(100%);
+            margin: 0 0 16px;
+        }
+    }
+
+    &.content__text_lg {
+        p {
+            @extend %title-default;
+
+            @include media-breakpoint-up(md) {
+                margin: 0 0 16px;
+            }
+
+            @include media-breakpoint-down(sm) {
+                @include fs-lh(18px,24px);
+                letter-spacing: 0.03em;
+                text-transform: lowercase;
+                font-family: $font-family_default;
+            }
+        }
+    }
+}
+
+.content__picture {
+    text-align: center;
+
+    &.content__picture_col {
+        @include media-breakpoint-up(md) {
+            @include fw(100%/12*5);
+            margin: 0 0 30px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            @include fw(100%);
+            margin: 0 0 48px;
+        }
+    }
+}
+
+.content__inner {
+    margin: 0 0 48px;
+
+    &.content__inner_flex {
+        @extend %d-flex;
+        align-items: center;
+        margin-bottom: 0;
+    }
+}

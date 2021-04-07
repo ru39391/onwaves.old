@@ -1,0 +1,197 @@
+.modal.modal_custom.fade(id="free" tabindex="-1" role="dialog" aria-hidden="true")
+	.modal-dialog
+		.modal-content
+			.modal-header
+				.modal-title
+					| регистрируйся и получи пробный урок бесплатно
+				button.close(type="button" data-dismiss="modal" aria-label="Close")
+					svg.icon-fluid
+						use(xlink:href="#icon-close")
+			.modal-body.modal-body_rightbg
+				form.form(action="#")
+					.form__body.form__body_mb
+						.form__item
+							input.form__field(type="text" value="" placeholder="Имя*")
+						.form__item
+							input.form__field(type="text" value="" placeholder="Почта*")
+						.form__item
+							input.form__field(type="text" value="" placeholder="Телефон*")
+					footer.form__footer
+						input.btn.btn_standart.btn_colored(type="submit" value="ЗАРЕГИСТРИРОВАТЬСЯ")
+					a.form__link.form__link_sm(href="#" target="_blank") Политика конфиденциальности
+
+
+- var row = [{appender: 'Добавить способ'},{appender: 'Добавить способ'},{appender: 'Добавить способ'},{appender: 'Добавить способ'},{appender: 'Добавить способ'}]
+.modal.modal_custom.fade(id="test" tabindex="-1" role="dialog" aria-hidden="true")
+	.modal-dialog
+		.modal-content
+			.modal-header
+				.modal-title
+					| записаться на курс «пробное занятие»
+				button.close(type="button" data-dismiss="modal" aria-label="Close")
+					svg.icon-fluid
+						use(xlink:href="#icon-close")
+			.modal-body.modal-body_bottombg
+				form.form(action="#")
+					.form__body.form__body_mb
+						.form__item
+							input.form__field(type="text" value="" placeholder="Имя*")
+						.form__item
+							input.form__field(type="text" value="" placeholder="Почта*")
+						.form__item
+							input.form__field(type="text" value="" placeholder="Телефон*")
+						.form__title Удобные способы связи
+						each row__item in row
+							.form__item.form__item_extender
+								.form__row
+									.form__col
+										select.form__select
+											option Telegram
+											option WhatsApp
+											option VK
+											option Instagram
+											option Facebook
+									.form__col.form__col_aside
+										input.form__field(type="text" value="" placeholder="Номер, ссылка")
+										button.form__close.form__close_remover(type="button")
+											svg.icon-fluid
+												use(xlink:href="#icon-close-sm")
+						.form__item
+							button.form__btn.form__btn_appender(type="button") Добавить способ
+
+					footer.form__footer.text-center
+						input.btn.btn_standart.btn_colored(type="submit" value="записаться на курс")
+					.text-center
+						a.form__link.form__link_sm(href="#" target="_blank") Политика конфиденциальности
+
+.modal.modal_custom.fade(id="reg" tabindex="-1" role="dialog" aria-hidden="true")
+	.modal-dialog
+		form.modal-content.modal-content_row.modal-content_dark(action="#")
+			.modal-col.modal-col_left
+				.modal-header
+					.modal-title
+						| регистрация
+					button.close(type="button" data-dismiss="modal" aria-label="Close")
+						svg.icon-fluid
+							use(xlink:href="#icon-close")
+				.modal-body
+					.modal-subtitle
+						| Введите свои данные
+						br
+						| чтобы зарегистрироваться
+						br
+						| на сайте
+					.form.form_inverse
+						.form__body
+							.form__item
+								input.form__field(type="text" value="" placeholder="Имя*")
+							.form__item
+								input.form__field(type="email" value="" placeholder="Почта*")
+							.form__item
+								input.form__field(type="text" value="" placeholder="Телефон*")
+							.form__title Удобные способы связи
+							each row__item in row
+								.form__item.form__item_extender
+									.form__row
+										.form__col
+											select.form__select.form__select_single
+												option Telegram
+												option WhatsApp
+												option VK
+												option Instagram
+												option Facebook
+										.form__col.form__col_aside
+											input.form__field(type="text" value="" placeholder="Номер, ссылка")
+											button.form__close.form__close_remover(type="button")
+												svg.icon-fluid
+													use(xlink:href="#icon-close-sm")
+							.form__item
+								.form__row
+									.form__col
+										button.form__btn.form__btn_appender(type="button") Добавить способ
+									.form__col
+										.form__intro Введите ссылку или номер вашей учетной записи, чтобы мы могли связаться с вами.
+
+						footer.form__footer
+							.form__row
+								.form__col.form__col_sm
+									button.form__btn.form__btn_icon.form__btn_more(type="button")
+										| Дополнительная информация
+										svg.icon-fluid
+											use(xlink:href="#icon-next")
+								.form__col.form__col_md
+									input.btn.btn_standart(type="submit" value="ЗАРЕГИСТРИРОВАТЬСЯ")
+						a.form__link.form__link_left(href="#" target="_blank") Политика конфиденциальности
+			.modal-col.modal-col_right
+				.form.form_inverse
+					.form__item
+						input.form__field.form__field_date(type="text" value="" placeholder="Дата рождения")
+					.form__item
+						input.form__field(type="text" value="" placeholder="Город")
+					.form__item
+						.form__title Интересы:
+						- var features = [{feature: 'Классический вокал'},{feature: 'Эстрадный вокал'},{feature: 'Джазовый вокал'},{feature: 'Рок вокал'},{feature: 'Фолк вокал'},{feature: 'Эстрадно-джазовый вокал'},{feature: 'Вокал для начинающих'},{feature: 'Песни в караоке'},{feature: 'Актёрское мастерство'},{feature: 'Поднятие самооценки'},{feature: 'Консультация актёров'},{feature: 'Уверенность в себе'},{feature: 'Личный бренд'},{feature: 'Имидж'},{feature: 'Продвижение'},{feature: 'Создание музыкального коллектива'},{feature: 'Игра на музыкальных инструментах'},{feature: 'Игра на фортепиано'},{feature: 'Игра на гитаре'},{feature: 'Игра на барабанах'},{feature: 'Профессиональный вокал'},{feature: 'Вокал для детей'},{feature: 'Запись песен'},{feature: 'Мастеринг'},{feature: 'Сведение музыки'},{feature: 'Аранжировка песен'},{feature: 'Написание песен'},{feature: 'Риторика'},{feature: 'Постановка голоса'},{feature: 'Дыхание'}]
+							select.form__select.form__select_multiple(name="name[]" multiple="multiple")
+								each features__item in features
+									option(value="") #{features__item.feature}
+
+.modal.modal_custom.fade(id="auth" tabindex="-1" role="dialog" aria-hidden="true")
+	.modal-dialog
+		.modal-content.modal-content_px.modal-content_light
+			.modal-header
+				.modal-title
+					| Вход
+				button.close(type="button" data-dismiss="modal" aria-label="Close")
+					svg.icon-fluid
+						use(xlink:href="#icon-close")
+			.modal-body
+				.modal-subtitle Чтобы продолжить необходимо войти или зарегестрироваться на сайте.
+				form.form.form_inverse(action="#")
+					.form__body
+						.form__item
+							input.form__field(type="email" value="" placeholder="Почта*")
+						.form__item.form__item_icon
+							input.form__field(type="password" value="" placeholder="Пароль*")
+							button.form__toggler.form__toggler_pwd(type="button")
+								svg.icon-fluid
+									use(xlink:href="#icon-eye")
+					footer.form__footer.text-center
+						input.btn.btn_standart.btn_colored(type="submit" value="Войти")
+					.form__row.form__row_column
+						a.form__link(href="#" data-toggle="modal" data-target="#reg" data-dismiss="modal" aria-label="Close") Регистрация
+						a.form__link(href="#" data-toggle="modal" data-target="#recovery" data-dismiss="modal" aria-label="Close") Забыли пароль?
+
+.modal.modal_custom.fade(id="recovery" tabindex="-1" role="dialog" aria-hidden="true")
+	.modal-dialog
+		.modal-content.modal-content_px.modal-content_light
+			.modal-header
+				.modal-title
+					| Восстановление пароля
+				button.close(type="button" data-dismiss="modal" aria-label="Close")
+					svg.icon-fluid
+						use(xlink:href="#icon-close")
+			.modal-body
+				.modal-subtitle Чтобы продолжить необходимо войти или зарегестрироваться на сайте.
+				form.form.form_inverse(action="#")
+					.form__body
+						.form__item
+							input.form__field(type="email" value="" placeholder="Почта*")
+					footer.form__footer.text-center
+						input.btn.btn_standart.btn_colored(type="submit" value="Отправить")
+					.form__row.form__row_column
+						a.form__link(href="#" data-toggle="modal" data-target="#reg" data-dismiss="modal" aria-label="Close") Регистрация
+						a.form__link(href="#" data-toggle="modal" data-target="#auth" data-dismiss="modal" aria-label="Close") Войти
+
+.modal.modal_custom.fade(id="play" tabindex="-1" role="dialog" aria-hidden="true")
+	.modal-dialog.modal-xl.modal-xxl.text-center
+		.modal-content.modal-content_row.modal-content_dark
+			.modal-col.modal-col_md.modal-col_nopx
+				.video.embed-responsive.embed-responsive-16by9
+					iframe.embed-responsive-item(src="https://player.vimeo.com/video/464104635?app_id=122963" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" title="1 1 вступление" data-ready="true" frameborder="0")
+			.modal-col.modal-col_lg.modal-col_column
+				button.close(type="button" data-dismiss="modal" aria-label="Close")
+					svg.icon-fluid
+						use(xlink:href="#icon-close")
+				.modal-header
+					.modal-title регистрируйся ЧТОБЫ увидеть все доступные курсы и получить больше информации
+				button.btn.btn_standart(type="button" data-toggle="modal" data-target="#reg" data-dismiss="modal" aria-label="Close") Зарегистрироваться

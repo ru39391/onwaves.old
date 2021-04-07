@@ -1,0 +1,103 @@
+.btn {
+    @extend %btn-default;
+    @include grad($btn__base_top,$btn__base_bottom);
+    color: #fff;
+    padding: 10px 10px 10px 14px;
+    text-align: center;
+    border-radius: 15px;
+    text-transform: uppercase;
+    transition: all .3s ease 0s;
+
+    &:hover {
+        color: #fff;
+    }
+
+    &.btn_xl {
+        width: 100%;
+
+        @include media-breakpoint-up(sm) {
+            max-width: 302px;
+        }
+    }
+
+    &.btn_lg {
+        width: 100%;
+
+        @include media-breakpoint-up(sm) {
+            max-width: 245px;
+        }
+    }
+
+    &.btn_md {
+        @include fs-lh(12px,16px);
+    }
+
+    &.btn_sm {
+        @include py(6px);
+        @include mw(170px);
+        text-transform: none;
+    }
+
+    &.btn_xs {
+        @include mw(114px);
+        @include fs-lh(14px,16px);
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        padding: 10px 10px 9px 10px;
+    }    
+
+    &.btn_standart {
+        @include mw(200px);
+        font-weight: 500;
+    }
+
+    &.btn_regular {
+        @include mw(200px);
+        @include fs-lh(12px,16px);
+        font-weight: 500;
+    }
+
+    &.btn_flex {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &.btn_icon {
+        width: 100%;
+        padding: 10px;
+
+        .btn__icon {
+            margin: 0;
+        }
+    }
+
+    &.btn_inverse {
+        @include fs-lh(12px,14px);
+        padding: 8px 12px 6px;
+        color: $color__brand_optional;
+        border-radius: 15px;
+        border: 1px solid $color__brand_optional;
+        background: #fff;
+
+        &:hover,
+        &:focus {
+            color: $color__brand_optional;
+        }
+    }
+
+    &.btn_colored {
+        @include grad($btn__colored_top,$btn__colored_bottom);
+    }
+
+    &:hover,
+    &:focus {
+        color: #fff;
+    }
+}
+
+.btn__icon {
+    @include fw(15px);
+    @include size(15px,16px);
+    margin: 0 14px 0 0;
+}

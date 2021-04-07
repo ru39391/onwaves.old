@@ -1,0 +1,44 @@
+.features {
+    @extend %d-flex;
+    align-items: center;
+
+    @include media-breakpoint-up(lg) {
+        justify-content: space-around;
+    }
+}
+
+.features__item {
+    @extend %flex-item;
+
+    @include media-breakpoint-up(xl) {
+        @include fw(100%/12*3);
+    }
+
+    @include media-breakpoint-only(lg) {
+        @include fw(100%/12*4);
+        padding: 0 16px 0 0;
+    }
+
+    @include media-breakpoint-down(md) {
+        @include fw(100%);
+        margin: 0 0 32px;
+    }
+}
+
+.features__item-icon {
+    @include fw(96px);
+    @include size(96px,96px);
+    margin: 0 24px 0 0;
+
+    @include media-breakpoint-only(lg) {
+        margin: 0 16px 0 0;
+    }
+}
+
+.features__item-title {
+    @extend %title-default;
+
+    @include media-breakpoint-only(lg) {
+        @include fs-lh(18px,24px);
+    }
+}

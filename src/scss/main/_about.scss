@@ -1,0 +1,100 @@
+.about {
+    padding: 16px 0 48px;
+    background: #ece3fb;
+    background: -moz-linear-gradient(-45deg,  #ece3fb 0%, #e0f8ff 100%);
+    background: -webkit-linear-gradient(-45deg,  #ece3fb 0%,#e0f8ff 100%);
+    background: linear-gradient(135deg,  #ece3fb 0%,#e0f8ff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ece3fb', endColorstr='#e0f8ff',GradientType=1 );
+
+    h1 {
+        @include fs-lh(36px,48px);
+        margin: 0 0 8px;
+    }
+}
+
+.about__col {
+    @include media-breakpoint-up(lg) {
+        @include px(30px);
+    }
+
+    &.about__col_lg {
+        @include fw(100%);
+    }
+
+    &.about__col_md {
+        @include media-breakpoint-up(lg) {
+            @include fw(100%/12*9);
+        }
+
+        @include media-breakpoint-down(md) {
+            @include fw(100%);
+        }
+    }
+
+    &.about__col_sm {
+        @include media-breakpoint-up(lg) {
+            @include fw(100%/12*3);
+        }
+
+        @include media-breakpoint-down(md) {
+            @include fw(100%);
+        }
+    }
+}
+
+.about__back {
+    @include inline-block;
+    @include size(24px,16px);
+    margin: 0 0 8px;
+}
+
+.about__meta {
+    margin: 0 0 40px;
+}
+
+.about__info {
+    @extend %flex-item;
+    @include fs-lh(14px,18px);
+    letter-spacing: 0.05em;
+}
+
+.about__date {
+    @include fs-lh(18px,24px);
+    letter-spacing: 0.03em;
+    margin: 0 0 0 8px;
+    color: $color__brand_default;
+}
+
+.about__content {
+    @include fs-lh(18px,24px);
+    letter-spacing: 0.03em;
+
+    @include media-breakpoint-down(md) {
+        margin: 0 0 40px;
+    }
+}
+
+.about__feature {
+    @extend %flex-item;
+    @include fs-lh(18px,22px);
+    margin: 0 0 32px;
+    letter-spacing: 0.05em;
+    color: $color__brand_optional;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.about__feature-value {
+    @extend %flex-column;
+    @include fw(48px);
+    @include size(48px,48px);
+    @include fs-lh(24px,28px);
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin: 0 12px 0 0;
+    border-radius: 50%;
+    border: 1px solid $color__brand_optional;
+}

@@ -1,0 +1,59 @@
+extends base.pug
+
+block meta
+  - var title = 'Первая волна / 1 неделя / 1 день';
+
+block content
+    .content__section.content__section_column
+        .content__inner
+            .content__subtitle Проверочный тест первой недели
+            nav.navigation
+                a.navigation__item.navigation__item_complete(href="#")
+                    svg.navigation__icon
+                        use(xlink:href="#icon-checked")
+                a.navigation__item.navigation__item_complete(href="#")
+                    svg.navigation__icon
+                        use(xlink:href="#icon-checked")
+                a.navigation__item.navigation__item_wrong(href="#")
+                    svg.navigation__icon
+                        use(xlink:href="#icon-wrong")
+                a.navigation__item.navigation__item_current(href="#") 4
+                a.navigation__item(href="#") 5
+                a.navigation__item(href="#") 6
+                a.navigation__item(href="#") 7
+                a.navigation__item(href="#") 8
+        form.form.form_column(action="#")
+            .form__item.form__item_flex
+                .form__title 
+                    | Название какого музыкального инструмента совпадает с названием геометрической фигуры? 
+                    b( data-toggle="modal" data-target="#dialog") Показать диалог
+                input.form__radio(id="test1" name="test" type="radio" value="")
+                label.form__label(for="test1") четырехугольник
+                input.form__radio(id="test2" name="test" type="radio" value="")
+                label.form__label(for="test2") треугольник
+                input.form__radio(id="test3" name="test" type="radio" value="")
+                label.form__label(for="test3") круг
+                input.form__radio(id="test4" name="test" type="radio" value="")
+                label.form__label(for="test4") квадрат
+            nav.control.control_right
+                a.control__item.control__item_next(href="#")
+                    svg.control__icon
+                        use(xlink:href="#icon-arrow")
+                    | cледующий вопрос
+
+block tooltip
+    .tooltip
+        button.tooltip__close(type="button") &times;
+        .tooltip__section.tooltip__section_intro
+            .tooltip__text Следуйте подсказкам в описании, чтобы ваше обучение было максимально эффективным:
+        .tooltip__section
+            .tooltip__title Базовые курсы
+        .tooltip__section
+            .tooltip__title Первая волна
+            img.tooltip__img.img-fluid(src="../img/content/tooltip.jpg" alt="")
+            .tooltip__text Эта волна посвящена самым базовым упражнениям, фундаментальным для каждого голоса. Мы разберемся, что значит правильное певческое дыхание, найдем опору для звука. Узнаем, где находятся наши резонаторы и озвучим в них. Поиграем в актеров и примерим разные эмоции, чтобы понять важность интонации голоса. И конечно зазвучим в упражнениях на развитие гибкости голоса.
+        .tooltip__section
+            .tooltip__title 1 неделя
+            .tooltip__text Что такое правильное певческое дыхание? Как найти опору для звука? Как сделать выдох длинным и спокойным? Все упражнения на этой неделе посвящены дыханию.
+        .tooltip__section
+            .tooltip__title 2 день

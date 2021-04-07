@@ -1,0 +1,21 @@
+.play {
+    @include inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.play__text {
+    @include size(150px,150px);
+    transform-origin: center center;
+    animation: circlepit 10s linear infinite;
+}
+
+.play__btn {
+    @include pos(50%,50%);
+    @include size(110px,110px);
+    margin: -55px 0 0 -55px;
+}
+
+@keyframes circlepit{
+    0%{ transform:rotate(0deg) } to { transform:rotate(1turn) }
+}

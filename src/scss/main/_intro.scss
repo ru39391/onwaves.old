@@ -1,0 +1,67 @@
+.intro {
+    background: url(../img/bg/intro.jpg) no-repeat scroll center top rgba(0,0,0,0);
+
+    @include media-breakpoint-up(lg) {
+        @include offset(0 0 94px,64px 0 36px);
+    }
+
+    @include media-breakpoint-down(lg) {
+        background-position: 75% top;
+    }
+
+    @include media-breakpoint-down(md) {
+        @include offset(0 0 16px,32px 0 58px);
+        background-position: 70% top;
+    }
+
+    @include media-breakpoint-down(sm) {
+        background-size: auto 100%;
+    }
+}
+
+.intro__wrapper {
+    @include media-breakpoint-up(lg) {
+        width: (100%/12*6);
+        margin: 0 0 0 (100%/12);
+    }
+
+    @include media-breakpoint-only(md) {
+        width: (100%/12*8);
+    }
+}
+
+.intro__title {
+    @extend %title-default;
+    color: #fff;
+
+    @include media-breakpoint-up(md) {
+        @include fs-lh(82px,86px);
+        margin: 0 0 8px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        @include fs-lh(48px,52px);        
+        width: (100%/12*9);
+        margin: 0 0 12px;
+    }
+}
+
+.intro__subtitle {
+    @extend %title-default;
+    color: #fff;
+
+    @include media-breakpoint-up(md) {
+        @include fs-lh(36px,48px);
+        margin: 0 0 16px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        @include fs-lh(24px,30px);        
+        width: (100%/12*8);
+        margin: 0 0 12px;
+    }
+}
+
+.intro__footer {
+    
+}

@@ -1,0 +1,28 @@
+.grid {
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    @include media-breakpoint-up(md) {
+        display: grid;
+        grid-template-rows: 1fr;
+    }
+
+    @include media-breakpoint-only(md) {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    &.grid_mingap {
+        grid-gap: 28px;
+    }
+
+    &.grid_offset {
+        @include media-breakpoint-up(xl) {
+            @include px(74px);
+        }
+
+        @include media-breakpoint-down(lg) {
+            grid-gap: 28px;
+        }
+    }
+}

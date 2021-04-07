@@ -1,0 +1,44 @@
+.promo {
+    @extend %d-flex;
+
+    @include media-breakpoint-up(xl) {
+        margin: 0 0 80px;
+    }
+
+    @include media-breakpoint-only(lg) {
+        margin: 0 0 64px;
+    }
+
+    @include media-breakpoint-down(md) {
+        margin: 0 0 32px;
+    }
+}
+
+.promo__video {
+    @include media-breakpoint-up(lg) {
+        @include fw(100%/12*8);
+        height: 510px;
+    }
+
+    @include media-breakpoint-down(md) {
+        @include fw(100%);
+        height: 375px;
+    }
+}
+
+.promo__content {
+    @extend %flex-column;
+    align-items: center;
+    justify-content: center;
+    background: url(../img/bg/promo-content.jpg) no-repeat scroll 50% rgba(0,0,0,0);
+
+    @include media-breakpoint-up(lg) {
+        @include fw(100%/12*4);
+    }
+
+    @include media-breakpoint-down(md) {
+        @include fw(100%);
+        height: 375px;
+        padding: 0 64px;
+    }
+}

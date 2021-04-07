@@ -1,0 +1,36 @@
+.header {
+    @extend %d-flex;
+    @extend %container;
+    @include py(10px);
+    align-items: center;
+    justify-content: space-between;
+
+    @include media-breakpoint-down(md) {
+        position: relative;
+        z-index: 1020;
+    }
+}
+
+.header__logo {
+    @include fw(220px);
+    @include size(220px,60px);
+}
+
+.header__toggler {
+    @extend %btn-default;
+
+    &.header__toggler_menu {
+        @include grad(#5B31F3,#501CC3);
+        @include fw(35px);
+        @include size(35px,35px);
+        border-radius: 50%;
+
+        @include media-breakpoint-up(lg) {
+            display: none;        
+        }
+
+        @include media-breakpoint-down(md) {
+            @include inline-block;
+        }
+    }
+}

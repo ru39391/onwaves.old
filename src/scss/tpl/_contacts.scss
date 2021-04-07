@@ -1,0 +1,33 @@
+.contacts {
+    @include media-breakpoint-down(md) {
+        @include inline-block;
+    }
+}
+
+.contacts__item {
+    @extend %flex-item;
+    justify-content: flex-start;
+    color: #fff;
+    margin: 0 0 8px;
+
+    &:hover {
+        color: #fff;
+    }
+}
+
+.contacts__icon {
+    @include fw(18px);
+    @include size(18px,18px);
+    margin: 0 12px 0 0;
+
+    &.contacts__icon_phone {
+        @include fw(12px);
+        @include size(12px,20px);
+        margin: 0 18px 0 0;
+    }
+
+    &.contacts__icon_email {
+        @include fw(20px);
+        @include size(20px,12px);        
+    }
+}

@@ -1,0 +1,303 @@
+.plan {
+    @include before;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.15);
+
+    @include media-breakpoint-up(xl) {
+        @include offset(0 0 140px,38px 0 38px 48px);
+        display: flex;
+        align-items: center;
+    }
+
+    @include media-breakpoint-up(lg) {
+        background: #F4F4F4;
+    }
+
+    @include media-breakpoint-only(lg) {
+        @include offset(0 0 64px,32px);
+    }
+
+    @include media-breakpoint-down(md) {
+        @include offset(0 -16px,48px 52px);
+        background: url(../img/bg/plan.svg) no-repeat scroll right bottom #F4F4F4;
+        background-size: auto 100%;
+    }
+
+    &:before {
+        @include media-breakpoint-up(xl) {
+            @include pos(16px,(100%/12*8));
+            bottom: 16px;
+            width: 2px;
+            margin: 0 0 0 16px;
+            background: #E0E0E0;
+        }
+    }
+
+    &.plan_offset {
+        @include before;
+        align-items: stretch;
+        position: relative;
+
+        @include media-breakpoint-up(xl) {
+            padding: 80px;
+        }
+
+        @include media-breakpoint-only(lg) {
+            @include px(16px);
+            display: flex;
+        }
+
+        @include media-breakpoint-down(md) {
+            background-image: url(../img/bg/plan-offset-mobile.svg);
+            background-size: auto auto;
+        }
+
+        &:before {            
+            @include media-breakpoint-up(md) {
+                @include pos(0,0);
+                bottom: 0;
+                margin: 0;
+                width: 100%;
+                z-index: 1;
+                background: url(../img/bg/plan-offset.svg) no-repeat scroll right bottom rgba(0,0,0,0);
+            }
+        }
+
+        .plan__meta {
+            flex: 0 0 auto;
+            max-width: initial;
+        }
+
+        .plan__sale {
+            position: absolute;
+
+            @include media-breakpoint-up(lg) {
+                top: -46px;
+                right: 80px;
+            }
+
+            @include media-breakpoint-only(lg) {
+                top: 0;
+            }
+    
+            @include media-breakpoint-down(md) {
+                top: -32px;
+                right: -36px;
+            }
+        }
+
+        .plan__sale-bg {    
+            @include media-breakpoint-only(xs) {
+                @include size(75px,75px);
+                background-size: 100% 100%;
+            }
+        }
+
+        .plan__sale-title {    
+            @include media-breakpoint-only(xs) {
+                @include fs-lh(14px,18px);
+                width: 75px;
+            }
+        }
+    }
+}
+
+.plan__col {
+    @include media-breakpoint-up(xl) {
+        @include px(16px);
+    }
+
+    @include media-breakpoint-up(lg) {
+        display: flex;
+        align-items: center;
+    }
+
+    &.plan__col_lg {
+        @include media-breakpoint-up(xl) {
+            @include fw(100%/12*8);
+        }
+
+        @include media-breakpoint-only(lg) {
+            margin: 0 0 32px;
+        }
+    }
+
+    &.plan__col_sm {
+        @include media-breakpoint-up(xl) {
+            @include fw(100%/12*4);
+            justify-content: center;
+        }
+
+        @include media-breakpoint-down(md) {
+           text-align: center;
+        }
+    }
+
+    &.plan__col_hf {
+        @extend %zi-2;
+        display: block;
+
+        @include media-breakpoint-up(lg) {
+            @include fw(100%/12*6);
+        }
+
+        @include media-breakpoint-up(xl) {
+            padding: 0 80px;
+        }
+
+        @include media-breakpoint-only(lg) {
+            padding: 0 16px;
+        }
+
+        @include media-breakpoint-down(md) {
+            margin: 0 0 32px;
+        }
+
+        .plan__title {
+            flex: 0 0 auto;
+            max-width: initial;
+        }
+    }
+
+    &.plan__col_column {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+}
+
+.plan__title {
+    @extend %title-default;
+    @include fs-lh(36px,48px);
+
+    @include media-breakpoint-only(lg) {
+        padding: 0 16px 0 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+        @include fw(100%/12*4);
+    }
+
+    @include media-breakpoint-down(md) {
+        margin: 0 0 40px;
+    }
+
+    &.plan__title_sm {
+        @include media-breakpoint-up(lg) {
+            @include fw(100%/12*3);
+        }
+    }
+}
+
+.plan__subtitle {
+    @include fs-lh(14px,18px);
+    letter-spacing: 0.05em;
+}
+
+.plan__meta {
+    position: relative;
+
+    @include media-breakpoint-only(lg) {
+        padding: 0 16px 0 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+        @include fw(100%/12*4);
+    }
+
+    @include media-breakpoint-down(md) {
+        margin: 0 0 16px;
+    }
+
+    &.plan__meta_sm {
+        @include media-breakpoint-up(lg) {
+            @include fw(100%/12*3);
+        }
+    }
+}
+
+.plan__value {
+    @extend %title-default;
+    font-size: 36px;
+    color: $color__brand_optional;
+
+    &.plan__value_sm {
+        font-size: 24px;
+        color: $color__text_default;
+    }
+
+    &.plan__value_old {
+        @include before;
+        @include inline-block;
+        @include fs-lh(24px,38px);
+        color: #C4C4C4;
+
+        @include media-breakpoint-up(lg) {
+            position: absolute;
+        }
+
+        &:before {
+            @include pos(10px,0);
+            right: 0;
+            height: 2px;
+            background: #9D9D9D;
+            transform: rotate(15deg);
+            transform-origin: left top;
+        }
+    }
+}
+
+.plan__about {
+    @include media-breakpoint-up(lg) {
+        display: none;
+    }
+
+    @include media-breakpoint-down(md) {
+        margin: 56px 0 32px;
+    }
+
+    &.plan__about_visible {
+        @include media-breakpoint-up(lg) {
+            display: block;
+        }
+    }
+}
+
+.plan__info {
+    @extend .about__info;
+    white-space: nowrap;
+}
+
+.plan__date {
+    @extend .about__date;
+}
+
+.plan__sale {
+    @extend %title-default;
+    @include fs-lh(24px,30px);
+    color: #fff;
+    position: relative;
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+        @include fw(100%/12*3);
+    }
+
+    @include media-breakpoint-down(md) {
+        margin: 0 0 16px;
+    }
+}
+
+.plan__sale-bg {
+    @include size(125px,125px);
+    background: url(../img/bg/icon-plan-sale.svg) no-repeat scroll 0 0 rgba(0,0,0,0);
+}
+
+.plan__sale-title {
+    @extend %flex-column;
+    @include pos(0,0);
+    bottom: 0;
+    width: 125px;
+    align-items: center;
+    justify-content: center;
+}

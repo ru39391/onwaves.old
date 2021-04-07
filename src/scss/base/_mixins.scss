@@ -1,0 +1,92 @@
+@mixin before {
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+    }
+}
+
+@mixin mw($mw,$width:100%) {
+    width: $width;
+    max-width: $mw;
+}
+
+@mixin fw($fw) {
+    flex: 0 0 $fw;
+    max-width: $fw;
+}
+
+@mixin offset($margin,$padding) {
+    margin: $margin;
+    padding: $padding;
+}
+
+@mixin px($px__l,$px__r:$px__l) {
+    padding: {
+        left: $px__l;
+        right: $px__r;
+    }
+}
+
+@mixin py($py__l,$py__r:$py__l) {
+    padding: {
+        top: $py__l;
+        bottom: $py__r;
+    }
+}
+
+@mixin mx($mx__l,$mx__r:$mx__l) {
+    margin: {
+        left: $mx__l;
+        right: $mx__r;
+    }
+}
+
+@mixin pos($pt,$pl,$pp:absolute) {
+    top: $pt;
+    left: $pl;
+    position: $pp;
+}
+
+@mixin border($bw,$bc,$bs:solid) {
+    border: {
+        width: $bw;
+        color: $bc;
+        style: $bs;
+    }
+}
+
+@mixin bg($bgs,$bgp:0 0) {
+    background: {
+        size: $bgs;
+        position: $bgp;
+        repeat: no-repeat;
+        color: rgba(0,0,0,0);
+    }
+}
+
+@mixin grad($bg__top,$bg__bottom) {
+    background: $bg__top;
+    background: -moz-linear-gradient(top,  $bg__top 0%, $bg__bottom 100%);
+    background: -webkit-linear-gradient(top,  $bg__top 0%,$bg__bottom 100%);
+    background: linear-gradient(to bottom,  $bg__top 0%,$bg__bottom 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$bg__top', endColorstr='$bg__bottom',GradientType=0 );
+}
+
+@mixin font($fs,$fw) {
+    font: {
+        size: $fs;
+        weight: $fw;
+    }
+}
+
+@mixin fs-lh($fs,$lh) {
+    font-size: $fs;
+    line-height: $lh;
+}
+
+@mixin inline-block($va:top) {
+    display: inline-block;
+    vertical-align: $va;
+}

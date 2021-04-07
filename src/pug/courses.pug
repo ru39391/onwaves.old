@@ -1,0 +1,107 @@
+extends base.pug
+
+block meta
+  - var title = 'Базовые курсы';
+
+block wrapper
+  .wrapper.wrapper_column
+    .content.content_lg
+      header.content__header.content__header_bg
+        .content__title.content__title_lg #{title}
+
+      block content
+        .content__body
+          .offer.offer_flex.offer_bg
+            .offer__col.offer__col_top
+              .offer__title.offer__title_sm
+                | Акция! Учись выгодно!
+                br
+                | купи сразу 3 курса и 
+                br
+                | получи скидку!
+            .offer__col
+              .offer__row
+                .offer__feature.offer__feature_sm
+                  img.img-fluid(src="/img/content/tooltip.jpg" alt="")
+                .offer__feature.offer__feature_sm
+                  img.img-fluid(src="/img/content/tooltip.jpg" alt="")
+                .offer__feature.offer__feature_sm
+                  img.img-fluid(src="/img/content/tooltip.jpg" alt="")
+                .offer__feature.offer__feature_sm.offer__feature_sale.offer__feature_ml -20
+              .offer__row
+                .offer__subtitle.offer__subtitle_dark Общая сумма
+                .offer__price.offer__price_xs.offer__price_colored
+                  | 19 199₽
+                .offer__price.offer__price_old 23 997₽
+            .offer__col.text-center
+              .counter.counter_sm
+                .counter__hidden
+                .counter__date 2021-04-06 23:59:59
+                .counter__title  До повышения цены осталось:
+                .counter__wrapper
+              a.btn.btn_xl.btn_colored(href="#") Записаться на курсы
+
+          .grid.grid_mingap
+            .card
+              a.card__picture(href="#")
+                img.img-fluid(src="/img/content/courses/1.jpg" alt="")
+              .card__body
+                header.card__header
+                  a.card__title(href="#") Первая волна
+                  .card__intro
+                    | Старт: 
+                    span.card__date 12 марта 2021
+                footer.card__footer
+                  .card__inner
+                    .card__subtitle Личный куратор
+                    .card__price 3 999₽
+                  a.card__readmore(href="#")
+                    | узнать больше
+                    svg.icon-next
+                      use(xlink:href="#icon-arrow-long")
+                  a.btn.btn_lg(href="#") перейти к курсу
+
+            .card
+              a.card__picture(href="#")
+                img.img-fluid(src="/img/content/courses/2.jpg" alt="")
+              .card__body
+                header.card__header
+                  a.card__title(href="#") Вторая волна
+                footer.card__footer
+                  .card__inner
+                    .card__subtitle Курс «Первая волна»‎
+                    .card__price.card__price_colored 7 999₽
+                  .card__inner
+                    .card__subtitle Курс с куратором
+                    .card__price 11 998₽
+                  a.card__readmore(href="#")
+                    | узнать больше
+                    svg.icon-next
+                      use(xlink:href="#icon-arrow-long")
+                  a.btn.btn_lg.btn_colored(href="#") перейти к курсу
+
+            .card
+              a.card__picture(href="#")
+                img.img-fluid(src="/img/content/courses/3.jpg" alt="")
+                span.counter.counter_card.counter_inverse
+                  span.counter__hidden
+                  span.counter__date 2021-04-04 16:59:59
+                  span.counter__title  До повышения цены осталось:
+                  span.counter__wrapper
+              .card__body
+                header.card__header
+                  a.card__title(href="#") Третья волна
+                footer.card__footer
+                  .card__inner
+                    .card__subtitle Стоимость курса
+                    .card__price.card__price_colored 7 999₽
+                  .card__inner
+                    .card__subtitle Курс с куратором
+                    .card__price 11 998₽
+                  a.card__readmore(href="#")
+                    | узнать больше
+                    svg.icon-next
+                      use(xlink:href="#icon-arrow-long")
+                  a.btn.btn_lg.btn_colored(href="#") перейти к курсу
+
+    include includes/base/footer.pug
