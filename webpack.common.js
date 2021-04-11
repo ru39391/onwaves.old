@@ -67,7 +67,6 @@ module.exports = {
           test: /\.(ico|gif|png|jpg|jpeg|svg)$/i,          
           loader: 'file-loader',
           options: {
-            name: '[name].[ext]',
             name: (resourcePath, resourceQuery) => {
               if (/favicon\.ico/.test(resourcePath)) {
                 return '[name].[ext]'
@@ -77,7 +76,14 @@ module.exports = {
               }
               return '[folder]/[name].[ext]'
             },
-            outputPath: 'img/'
+            outputPath: 'img/',
+            //publicPath: '/img/',
+            publicPath: (url, resourcePath, context) => {
+              if (/\/bg\//.test(resourcePath)) {
+                return `../img/${url}`
+              }
+              return `img/${url}`
+            }
           }
         },
         {
