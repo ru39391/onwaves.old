@@ -49,8 +49,8 @@ module.exports = {
           test: /\.(sass|scss)$/,
           use: [
             { loader: MiniCssExtractPlugin.loader },
-            { loader: 'css-loader', options: { importLoaders: 1 } },
-            { loader: 'postcss-loader', options: {
+            { loader: 'css-loader', options: { importLoaders: 1 } }, // url: false
+            { loader: 'postcss-loader', options: {              
               postcssOptions: {
                 plugins: {
                   'postcss-preset-env': {
@@ -64,8 +64,12 @@ module.exports = {
           ]
         },
         {
-          test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-          type: 'asset/resource',
+          test: /\.(ico|gif|png|jpg|jpeg)$/i,          
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'img/'
+          }
         },
         {
           test: /\.(woff|woff2|eot|ttf|otf)$/i,

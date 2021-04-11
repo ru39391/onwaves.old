@@ -5,6 +5,7 @@ import 'bootstrap/js/dist/modal';
 import './libs/jquery.countdown';
 import './page/countdown';
 import './page/forms';
+import '../img/favicon.ico';
 
 /* menu */
 document.querySelector('.header__toggler_menu').addEventListener('click', () => {
