@@ -6,6 +6,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 const paths = {
   src: path.join(__dirname, 'src'),
@@ -131,6 +133,8 @@ module.exports = {
     })),
     new SpriteLoaderPlugin({
       plainSprite: true
-    })
+    }),
+    new StylelintPlugin({}),
+    new ESLintPlugin({})
   ]  
 };
