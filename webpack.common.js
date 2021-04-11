@@ -68,6 +68,15 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: '[name].[ext]',
+            name: (resourcePath, resourceQuery) => {
+              if (/favicon\.ico/.test(resourcePath)) {
+                return '[name].[ext]'
+              }
+              if (/content\/courses/.test(resourcePath)) {
+                return 'content/courses/[name].[ext]'
+              }
+              return '[folder]/[name].[ext]'
+            },
             outputPath: 'img/'
           }
         },

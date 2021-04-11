@@ -6,6 +6,9 @@ import './libs/jquery.countdown';
 import './page/countdown';
 import './page/forms';
 import '../img/favicon.ico';
+import '../img/content/courses/1.jpg';
+import '../img/content/courses/2.jpg';
+import '../img/content/courses/3.jpg';
 
 /* menu */
 document.querySelector('.header__toggler_menu').addEventListener('click', () => {
