@@ -6,6 +6,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 const paths = {
   src: path.join(__dirname, 'src'),
@@ -49,8 +51,8 @@ module.exports = {
           test: /\.(sass|scss)$/,
           use: [
             { loader: MiniCssExtractPlugin.loader },
-            { loader: 'css-loader', options: { importLoaders: 1 } },
-            { loader: 'postcss-loader', options: {
+            { loader: 'css-loader', options: { importLoaders: 1 } }, // url: false
+            { loader: 'postcss-loader', options: {              
               postcssOptions: {
                 plugins: {
                   'postcss-preset-env': {
@@ -64,8 +66,27 @@ module.exports = {
           ]
         },
         {
-          test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-          type: 'asset/resource',
+          test: /\.(ico|gif|png|jpg|jpeg|svg)$/i,          
+          loader: 'file-loader',
+          options: {
+            name: (resourcePath, resourceQuery) => {
+              if (/favicon\.ico/.test(resourcePath)) {
+                return '[name].[ext]'
+              }
+              if (/content\/courses/.test(resourcePath)) {
+                return 'content/courses/[name].[ext]'
+              }
+              return '[folder]/[name].[ext]'
+            },
+            outputPath: 'img/',
+            //publicPath: '/img/',
+            publicPath: (url, resourcePath, context) => {
+              if (/\/bg\//.test(resourcePath)) {
+                return `../img/${url}`
+              }
+              return `img/${url}`
+            }
+          }
         },
         {
           test: /\.(woff|woff2|eot|ttf|otf)$/i,
@@ -112,6 +133,8 @@ module.exports = {
     })),
     new SpriteLoaderPlugin({
       plainSprite: true
-    })
+    }),
+    new StylelintPlugin({}),
+    new ESLintPlugin({})
   ]  
 };
