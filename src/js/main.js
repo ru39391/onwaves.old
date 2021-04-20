@@ -1,5 +1,6 @@
 import '../scss/main.scss';
-
+import JQuery from 'jquery';
+window.$ = window.JQuery = JQuery;
 import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/modal';
 import './libs/jquery.countdown';
